@@ -5,38 +5,32 @@ set -o pipefail
 echo "--- [CI/CD Flutter Setup - Native] START ---"
 
 # --- Definicja Ścieżek ---
-# CI_WORKSPACE_PATH: /Volumes/workspace
 FLUTTER_HOME="$CI_WORKSPACE_PATH/flutter"
-FLUTTER_CMD="$FLUTTER_HOME/bin/flutter"
 
 # Ścieżki względne, skoro skrypt jest w ios/ci_scripts/
-REPO_PATH="../.."
-IOS_PROJECT_PATH=".."
+REPO_ROOT="../.." # Katalog główny repozytorium
+IOS_DIR="../" # Katalog ios/
 
 echo "Ścieżki robocze:"
-echo "Repozytorium: $REPO_PATH"
-echo "Katalog iOS: $IOS_PROJECT_PATH"
+echo "Repozytorium (Root): $REPO_ROOT"
+echo "Katalog iOS: $IOS_DIR"
 
-# ... (Reszta skryptu pozostaje taka sama) ...
-# Pamiętaj, aby zmienić "cd $REPO_PATH" i "cd $IOS_PROJECT_PATH"
-
-# 1. Instalacja Flutter SDK (jak poprzednio, bez zmian)
-echo "1. Klonowanie i instalacja Flutter SDK..."
+# 1. Klonowanie i instalacja Flutter SDK (OK)
+echo "1. Klonowanie i instalacja Flutter SDK (stable)..."
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$FLUTTER_HOME"
 export PATH="$PATH:$FLUTTER_HOME/bin"
 flutter --version
 
 # 2. Pub Get
 echo "2. Uruchamianie 'flutter pub get' w katalogu repozytorium..."
-# Wejście do katalogu głównego (ios/ci_scripts -> ../.. -> katalog główny)
-cd "$REPO_PATH"
+cd "$REPO_ROOT" # Z ios/ci_scripts -> do katalogu głównego
 flutter pub get
 
 # 3. Pod Install
 echo "3. Uruchamianie 'pod install' w folderze iOS..."
-# Wejście do katalogu ios (katalog główny -> ios)
-cd "$IOS_PROJECT_PATH"
-# Uruchomienie pod install przy użyciu xcrun dla pewności
+# Jesteśmy w katalogu głównym (np. /Volumes/workspace/repository). 
+# Musimy wejść do folderu ios.
+cd ios 
 xcrun pod install
 
 echo "--- [CI/CD Flutter Setup - Native] COMPLETED ---"
