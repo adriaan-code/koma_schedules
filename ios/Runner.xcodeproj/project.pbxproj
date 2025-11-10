@@ -192,6 +192,7 @@
 			buildPhases = (
 				92A8BD2259072C9504B475D8 /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
+				8D7BD8DD2EC21E41008608CB /* CI/CD Flutter Setup */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
@@ -286,6 +287,24 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
 		};
+		8D7BD8DD2EC21E41008608CB /* CI/CD Flutter Setup */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "CI/CD Flutter Setup";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Uruchomienie skryptu z głównego katalogu repozytorium\n# CI_PRIMARY_REPOSITORY_PATH to /Volumes/workspace/repository\n\"$CI_PRIMARY_REPOSITORY_PATH/ci_scripts/ci_post_clone.sh\"\n";
+		};
 		92A8BD2259072C9504B475D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,7 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		C246057FE30570F3D066E2F2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
