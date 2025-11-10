@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Ustawienie opcji, aby skrypt przerwał działanie przy pierwszym błędzie
+# Ustawienie opcji, aby skrypt przerwał działanie przy pierwszym błędzie i wyświetlał błędy
 set -e
 set -o pipefail
 
 echo "--- [CI/CD Flutter Setup] START ---"
 
 # --- Definicja Ścieżek ---
-# CI_WORKSPACE_PATH: Główny katalog roboczy /Volumes/workspace
-# CI_PRIMARY_REPOSITORY_PATH: Katalog z sklonowanym repozytorium /Volumes/workspace/repository
+# CI_WORKSPACE_PATH: /Volumes/workspace
+# CI_PRIMARY_REPOSITORY_PATH: /Volumes/workspace/repository
 FLUTTER_HOME="$CI_WORKSPACE_PATH/flutter"
 FLUTTER_CMD="$FLUTTER_HOME/bin/flutter"
 REPO_PATH="$CI_PRIMARY_REPOSITORY_PATH"
@@ -25,7 +25,7 @@ echo "1. Klonowanie i instalacja Flutter SDK (stable)..."
 # Klonowanie do $FLUTTER_HOME
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$FLUTTER_HOME"
 
-# Sprawdzenie, czy komenda flutter jest dostępna
+# Weryfikacja
 if [ ! -f "$FLUTTER_CMD" ]; then
     echo "BŁĄD: Nie znaleziono narzędzia Flutter w ścieżce: $FLUTTER_CMD"
     exit 1
@@ -36,8 +36,7 @@ echo "Wersja Fluttera:"
 
 # --- 2. Konfiguracja Ścieżki i Pobieranie Pakietów Fluttera (Pub Get) ---
 
-# Dodanie katalogu bin Fluttera do PATH, co jest kluczowe dla prawidłowego działania 'flutter pub get'
-# oraz w niektórych przypadkach dla 'pod install'
+# Dodanie katalogu bin Fluttera do PATH - kluczowe dla używania 'flutter' i 'pod install'
 export PATH="$PATH:$FLUTTER_HOME/bin"
 echo "Zaktualizowana zmienna PATH: $PATH"
 
@@ -53,9 +52,7 @@ echo "3. Uruchamianie 'pod install' w folderze iOS..."
 # Przejdź do katalogu ios/
 cd "$IOS_PROJECT_PATH"
 
-# Zapewnienie, że CocoaPods są aktualne, choć może to wydłużyć czas
-# gem install cocoapods 
-
-/usr/bin/pod install
+# Używamy samej komendy, ponieważ PATH została zaktualizowana i Flutter jest w stanie jej użyć
+pod install
 
 echo "--- [CI/CD Flutter Setup] COMPLETED ---"
