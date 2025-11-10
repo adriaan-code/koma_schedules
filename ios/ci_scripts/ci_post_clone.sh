@@ -36,6 +36,7 @@ flutter pub get
 echo "3. Uruchamianie 'pod install' w folderze iOS..."
 # Wejście do katalogu ios (katalog główny -> ios)
 cd "$IOS_PROJECT_PATH"
-/usr/bin/pod install
+# Uruchomienie pod install przy użyciu xcrun dla pewności
+xcrun pod install
 
 echo "--- [CI/CD Flutter Setup - Native] COMPLETED ---"
