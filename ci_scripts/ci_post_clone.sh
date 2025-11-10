@@ -4,10 +4,11 @@
 set -e
 set -o pipefail
 
-# --- Definicja Ścieżek ---
+echo "--- [CI/CD Flutter Setup] START ---"
 
-# CI_WORKSPACE_PATH: Główny katalog roboczy Xcode Cloud (/Volumes/workspace)
-# CI_PRIMARY_REPOSITORY_PATH: Katalog z sklonowanym repozytorium (/Volumes/workspace/repository)
+# --- Definicja Ścieżek ---
+# CI_WORKSPACE_PATH: Główny katalog roboczy /Volumes/workspace
+# CI_PRIMARY_REPOSITORY_PATH: Katalog z sklonowanym repozytorium /Volumes/workspace/repository
 FLUTTER_HOME="$CI_WORKSPACE_PATH/flutter"
 FLUTTER_CMD="$FLUTTER_HOME/bin/flutter"
 REPO_PATH="$CI_PRIMARY_REPOSITORY_PATH"
@@ -24,7 +25,7 @@ echo "1. Klonowanie i instalacja Flutter SDK (stable)..."
 # Klonowanie do $FLUTTER_HOME
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$FLUTTER_HOME"
 
-# Sprawdzenie, czy komenda flutter jest dostępna przez pełną ścieżkę
+# Sprawdzenie, czy komenda flutter jest dostępna
 if [ ! -f "$FLUTTER_CMD" ]; then
     echo "BŁĄD: Nie znaleziono narzędzia Flutter w ścieżce: $FLUTTER_CMD"
     exit 1
@@ -33,19 +34,28 @@ fi
 echo "Wersja Fluttera:"
 "$FLUTTER_CMD" --version
 
-# --- 2. Pobieranie Pakietów Fluttera ---
+# --- 2. Konfiguracja Ścieżki i Pobieranie Pakietów Fluttera (Pub Get) ---
+
+# Dodanie katalogu bin Fluttera do PATH, co jest kluczowe dla prawidłowego działania 'flutter pub get'
+# oraz w niektórych przypadkach dla 'pod install'
+export PATH="$PATH:$FLUTTER_HOME/bin"
+echo "Zaktualizowana zmienna PATH: $PATH"
+
 
 echo "2. Uruchamianie 'flutter pub get' w katalogu repozytorium..."
+# Przejdź do katalogu głównego projektu Fluttera, gdzie jest pubspec.yaml
 cd "$REPO_PATH"
-"$FLUTTER_CMD" pub get
+flutter pub get
 
 # --- 3. Instalacja CocoaPods ---
 
 echo "3. Uruchamianie 'pod install' w folderze iOS..."
+# Przejdź do katalogu ios/
 cd "$IOS_PROJECT_PATH"
 
-# Po 'flutter pub get', plik Flutter/Generated.xcconfig powinien już istnieć, 
-# więc 'pod install' powinien się wykonać poprawnie.
+# Zapewnienie, że CocoaPods są aktualne, choć może to wydłużyć czas
+# gem install cocoapods 
+
 /usr/bin/pod install
 
-echo "--- Konfiguracja CI/CD zakończona pomyślnie. ---"
+echo "--- [CI/CD Flutter Setup] COMPLETED ---"
