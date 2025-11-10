@@ -303,7 +303,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Uruchomienie skryptu z głównego katalogu repozytorium\n# CI_PRIMARY_REPOSITORY_PATH to /Volumes/workspace/repository\n\"$CI_PRIMARY_REPOSITORY_PATH/ci_scripts/ci_post_clone.sh\"\n";
+			shellScript = "# Ustawienie opcji, aby błędy były natychmiast zgłaszane\nset -e\nset -o pipefail\n\necho \"--- DEBUG: Starting CI/CD Flutter Setup from Build Phase ---\"\n\n# Wymuś wykonanie skryptu i wypisanie jego outputu\n/bin/bash \"$CI_PRIMARY_REPOSITORY_PATH/ci_scripts/ci_post_clone.sh\"\n\necho \"--- DEBUG: CI/CD Flutter Setup Finished Successfully ---\"\n";
 		};
 		92A8BD2259072C9504B475D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
