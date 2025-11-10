@@ -192,7 +192,6 @@
 			buildPhases = (
 				92A8BD2259072C9504B475D8 /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
-				8D7BD8DD2EC21E41008608CB /* CI/CD Flutter Setup */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
@@ -286,24 +285,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
-		};
-		8D7BD8DD2EC21E41008608CB /* CI/CD Flutter Setup */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "CI/CD Flutter Setup";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Ustawienie opcji, aby błędy były natychmiast zgłaszane\nset -e\nset -o pipefail\n\necho \"--- DEBUG: Starting CI/CD Flutter Setup from Build Phase ---\"\n\n# Wymuś wykonanie skryptu i wypisanie jego outputu\n/bin/bash \"$CI_PRIMARY_REPOSITORY_PATH/ci_scripts/ci_post_clone.sh\"\n\necho \"--- DEBUG: CI/CD Flutter Setup Finished Successfully ---\"\n";
 		};
 		92A8BD2259072C9504B475D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
