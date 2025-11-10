@@ -1,0 +1,27 @@
+version: 1.0
+identifier: archive-ios
+name: Archive iOS
+platform: ios
+
+environment:
+  xcode: "16.0"
+  variables:
+    FLUTTER_VERSION: stable
+
+triggers:
+  - kind: branch-change
+    filter:
+      source: main
+      include:
+        - ".*"
+
+actions:
+  - action: post-clone-script
+    name: Setup Flutter
+    script: ./ci_scripts/ci_post_clone.sh
+  - action: archive
+    name: Archive - iOS
+    workspace: ios/Runner.xcworkspace
+    scheme: Runner
+    configuration: Release
+

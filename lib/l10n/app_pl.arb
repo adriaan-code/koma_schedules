@@ -1,0 +1,288 @@
+{
+  "@@locale": "pl",
+  
+  "appTitle": "Aplikacja KOMA",
+  "koma": "KOMA",
+  "komaServices": "KOMA USŁUGI KOMUNALNE",
+  "back": "POWRÓT",
+  "returnButton": "POWRÓT",
+  "cancel": "Anuluj",
+  "ok": "OK",
+  "search": "Szukaj",
+  "loading": "Ładowanie...",
+  "error": "Błąd",
+  "noData": "Brak danych",
+  "tryAgain": "Spróbuj ponownie",
+  
+  "schedule": "Harmonogram",
+  "knowledgeBase": "Baza wiedzy",
+  "shop": "Sklep KOMA",
+  "bokPortal": "BOK Portal",
+  "notifications": "Powiadomienia",
+  "settings": "Ustawienia",
+  "notificationsComingSoon": "Powiadomienia - wkrótce dostępne",
+  
+  "addressSearch": "Wyszukiwanie adresu",
+  "searchAddress": "WYSZUKAJ",
+  "address": "ADRES",
+  "useLocation": "Użyj lokalizacji",
+  "gettingLocation": "Pobieranie lokalizacji...",
+  "locationError": "Błąd lokalizacji",
+  "gpsLocation": "Lokalizacja GPS",
+  "coordinates": "Współrzędne",
+  "selectSector": "Wybierz sektor",
+  "selectPrefix": "Wybierz prefiks",
+  "selectLocality": "Wybierz miejscowość",
+  "selectCity": "Wybierz miasto",
+  "selectStreet": "Wybierz ulicę",
+  "selectProperty": "Wybierz posesję",
+  "selectPropertyNumber": "Wybierz numer posesji",
+  "noProperties": "Brak posesji - sprawdź logi",
+  "showSchedule": "POKAŻ HARMONOGRAM",
+  "loadingSectors": "Ładowanie sektorów...",
+  "loadingSectorsError": "Błąd ładowania sektorów",
+  "selectSectorAndLocality": "Wybierz sektor i miejscowość",
+  "toFindSchedule": "Aby znaleźć harmonogram, wybierz adres z listy poniżej lub użyj wyszukiwania ręcznego.",
+  
+  "favoriteLocations": "Ulubione lokalizacje",
+  "recentLocations": "Ostatnie lokalizacje",
+  "recentSearches": "Ostatnie wyszukiwania",
+  "addedToFavorites": "Dodano do ulubionych",
+  "removedFromFavorites": "Usunięto z ulubionych",
+  "orSelectNewLocation": "Lub wybierz nową lokalizację używając list rozwijanych powyżej",
+  
+  "wasteSchedule": "Harmonogram odpadów",
+  "wasteCollection": "Odbiór odpadów",
+  "today": "Dzisiaj",
+  "tomorrow": "Jutro",
+  "nextWeek": "W przyszłym tygodniu",
+  "wasteToday": "Odpady na dzisiaj",
+  "todayCollection": "Dzisiaj odbiera się: ",
+  "wasteType": "Typ odpadu",
+  "collectionTime": "Czas odbioru",
+  "container": "Pojemnik",
+  "frequency": "Częstotliwość",
+  
+  "wasteDatabase": "Baza Odpadów",
+  "searchWaste": "WYSZUKAJ",
+  "waste": "ODPADY",
+  "enterWasteName": "Wpisz nazwę odpadu",
+  "searching": "Wyszukiwanie...",
+  "noResultsFor": "Brak odpadów zaczynających się na \"{query}\"",
+  "@noResultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "whereToThrow": "Gdzie wyrzucić:",
+  "or": "lub:",
+  "wasteGroup": "Grupa odpadów:",
+  "searchAgain": "Wyszukaj ponownie",
+  "checkWhereToThrow": "Sprawdź gdzie wyrzucić",
+  "minThreeCharacters": "Wpisz co najmniej 3 znaki, aby wyszukać odpady",
+  
+  "howToSegregate": "JAK SEGREGOWAĆ?",
+  "segregationGuide": "Przewodnik segregacji",
+  "instructions": "Instrukcje",
+  "whatCanBeThrown": "Co można wyrzucić",
+  "whatCannotBeThrown": "Czego nie można wyrzucić",
+  "preparation": "Przygotowanie",
+  "notes": "Uwagi",
+  "attention": "Uwaga:",
+  "doNotThrow": "Nie wrzucaj:",
+  
+  "mixed": "Zmieszane",
+  "paper": "Papier",
+  "glass": "Szkło",
+  "plastic": "Metale i tworzywa sztuczne",
+  "bio": "Bio",
+  "ash": "Popiół",
+  "bulky": "Gabaryty",
+  "green": "Odpady zielone",
+  
+  "newspapersAndMagazines": "• Gazety i czasopisma",
+  "cardboardAndPaperboard": "• Kartony i tektury",
+  "officePaper": "• Papier biurowy",
+  "booksWithoutCovers": "• Książki (bez okładek)",
+  "dirtyPaper": "• Papieru zabrudzonego",
+  "wallpaper": "• Tapet",
+  "waxedPaper": "• Papieru woskowanego",
+  "glassBottles": "• Butelki szklane",
+  "glassJars": "• Słoiki szklane",
+  "glassPackaging": "• Opakowania szklane",
+  "windowGlass": "• Szkła okiennego",
+  "mirrors": "• Luster",
+  "porcelain": "• Porcelany",
+  "aluminumCans": "• Puszki aluminiowe",
+  "steelCans": "• Puszki stalowe",
+  "plasticPackaging": "• Opakowania z tworzyw sztucznych",
+  "drinkCartons": "• Kartony po napojach",
+  "batteries": "• Baterii",
+  "electronics": "• Elektroniki",
+  "foodScraps": "• Resztki jedzenia",
+  "eggShells": "• Skorupki jaj",
+  "coffeeAndTeaGrounds": "• Fusy kawy i herbaty",
+  "vegetableAndFruitPeels": "• Obierki warzyw i owoców",
+  "meatAndFish": "• Mięsa i ryb",
+  "bones": "• Kości",
+  "oil": "• Oleju",
+  "furnaceAsh": "• Popiół z pieców",
+  "fireplaceAsh": "• Popiół z kominków",
+  "slag": "• Żużel",
+  "cigaretteAsh": "• Popiołu z papierosów",
+  "otherWaste": "• Innych odpadów",
+  "furniture": "• Meble",
+  "appliances": "• Sprzęt AGD",
+  "bicycles": "• Rowery",
+  "mattresses": "• Materace",
+  "callForCollection": "• Zgłoś odbiór telefonicznie",
+  "placeInFront": "• Ustaw przed posesją",
+  
+  "grassClippings": "• Skoszona trawa",
+  "leaves": "• Liście",
+  "branches": "• Gałęzie",
+  "hedgeTrimmings": "• Przycięte żywopłoty",
+  "plantWaste": "• Odpady roślinne",
+  "doNotThrowGreen": "• Nie wrzucaj:",
+  "soilAndStones": "• Ziemia i kamienie",
+  "foodWaste": "• Odpady spożywcze",
+  
+  "nonRecyclableWaste": "• Odpady, które nie nadają się do segregacji",
+  "dirtyPackaging": "• Zabrudzone opakowania",
+  "hygienicWaste": "• Odpady higieniczne",
+  "hazardousWaste": "• Odpadów niebezpiecznych",
+  
+  "reminder": "Przypomnienie",
+  "notificationTime": "Godzina powiadomień",
+  "locationAccess": "Dostęp do lokalizacji",
+  "language": "Język",
+  "appVersion": "Wersja aplikacji",
+  "copyright": "Copyright",
+  "testNotifications": "Test powiadomień",
+  "test": "Test",
+  "check": "Sprawdź",
+  "scheduledNotifications": "Zaplanowane powiadomienia",
+  "testNotificationSent": "Wysłano testowe powiadomienie",
+  "enabled": "Włączone",
+  "disabled": "Wyłączone",
+  "polish": "Polski",
+  "english": "Angielski",
+  
+  "wasteReminder": "Przypomnienie o odpadach",
+  "checkWasteScheduleToday": "Sprawdź harmonogram odbioru odpadów na dzisiaj",
+  
+  "permissionsRequired": "Uprawnienia wymagane",
+  "permissionMessage": "Aby korzystać z tej funkcji, musisz udzielić uprawnień do {permissionType} w ustawieniach aplikacji.",
+  "@permissionMessage": {
+    "placeholders": {
+      "permissionType": {
+        "type": "String"
+      }
+    }
+  },
+  "openSettings": "Otwórz ustawienia",
+  
+  "monday": "Poniedziałek",
+  "tuesday": "Wtorek",
+  "wednesday": "Środa",
+  "thursday": "Czwartek",
+  "friday": "Piątek",
+  "saturday": "Sobota",
+  "sunday": "Niedziela",
+  
+  "january": "Styczeń",
+  "february": "Luty",
+  "march": "Marzec",
+  "april": "Kwiecień",
+  "may": "Maj",
+  "june": "Czerwiec",
+  "july": "Lipiec",
+  "august": "Sierpień",
+  "september": "Wrzesień",
+  "october": "Październik",
+  "november": "Listopad",
+  "december": "Grudzień",
+  
+  "noInternetConnection": "Brak połączenia z internetem. Sprawdź połączenie i spróbuj ponownie.",
+  "serverError": "Błąd serwera. Spróbuj ponownie później.",
+  "unknownError": "Nieoczekiwany błąd",
+  "loadingError": "Błąd ładowania danych",
+  "tryAgainLater": "Spróbuj ponownie później",
+  "timeoutError": "Przekroczono czas oczekiwania. Sprawdź połączenie internetowe.",
+  "requestCancelled": "Żądanie zostało anulowane.",
+  "scheduleNotFound": "Nie znaleziono harmonogramu dla tego adresu.",
+  "fieldCannotBeEmpty": "{fieldName} nie może być pusty",
+  "@fieldCannotBeEmpty": {
+    "placeholders": {
+      "fieldName": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldTooLong": "{fieldName} jest zbyt długi (max {maxLength} znaków)",
+  "@fieldTooLong": {
+    "placeholders": {
+      "fieldName": {
+        "type": "String"
+      },
+      "maxLength": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingSchedule": "Błąd pobierania harmonogramu",
+  "errorLoadingSectors": "Błąd pobierania sektorów",
+  "errorLoadingStreets": "Błąd pobierania ulic",
+  "errorLoadingProperties": "Błąd pobierania posesji",
+  "errorLoadingDetails": "Błąd pobierania szczegółów",
+  "errorSearchingWaste": "Błąd wyszukiwania odpadów",
+  "serverErrorCode": "Błąd serwera: {code}",
+  "@serverErrorCode": {
+    "placeholders": {
+      "code": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "scheduleTooltip": "Harmonogram",
+  "knowledgeBaseTooltip": "Baza wiedzy",
+  "shopTooltip": "Sklep KOMA",
+  "bokTooltip": "BOK Portal",
+  "notificationsTooltip": "Powiadomienia",
+  "settingsTooltip": "Ustawienia",
+  "disposalLocations": "Lokalizacje utylizacji",
+  "searchLocationPlaceholder": "Wyszukaj lokalizację...",
+  "all": "Wszystkie",
+  "loadingLocationsError": "Błąd ładowania lokalizacji",
+  "noLocations": "Brak lokalizacji",
+  "noLocationsForFilters": "Nie znaleziono lokalizacji dla wybranych kryteriów",
+  "map": "Mapa",
+  "call": "Zadzwoń",
+  "delete": "Usuń",
+  "addressChangedTo": "Zmieniono adres na",
+  "externalLinks": "Linki zewnętrzne",
+  
+  "pageNotFound": "Nie znaleziono strony: {routeName}",
+  "@pageNotFound": {
+    "placeholders": {
+      "routeName": {
+        "type": "String"
+      }
+    }
+  },
+  "returnToMain": "Powrót do głównej",
+  "appSubtitle": "Zarządzanie odpadami",
+  "loading": "Ładowanie...",
+  "elektro": "Elektro",
+  "opony": "Opony",
+  "computers": "Komputery",
+  "phones": "Telefony",
+  "televisions": "Telewizory",
+  "refrigerators": "Lodówki",
+  "carTires": "Opony samochodowe",
+  "bicycleTires": "Opony rowerowe",
+  "motorcycleTires": "Opony motocyklowe"
+}

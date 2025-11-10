@@ -1,0 +1,279 @@
+{
+  "@@locale": "en",
+  
+  "appTitle": "KOMA App",
+  "koma": "KOMA",
+  "komaServices": "KOMA MUNICIPAL SERVICES",
+  "back": "BACK",
+  "returnButton": "RETURN",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "search": "Search",
+  "loading": "Loading...",
+  "error": "Error",
+  "noData": "No data",
+  "tryAgain": "Try again",
+  
+  "schedule": "Schedule",
+  "knowledgeBase": "Knowledge Base",
+  "shop": "KOMA Shop",
+  "bokPortal": "BOK Portal",
+  "notifications": "Notifications",
+  "settings": "Settings",
+  "notificationsComingSoon": "Notifications - coming soon",
+  
+  "addressSearch": "Address Search",
+  "searchAddress": "SEARCH",
+  "address": "ADDRESS",
+  "useLocation": "Use location",
+  "gettingLocation": "Getting location...",
+  "locationError": "Location Error",
+  "gpsLocation": "GPS Location",
+  "coordinates": "Coordinates",
+  "selectSector": "Select sector",
+  "selectPrefix": "Select prefix",
+  "selectLocality": "Select locality",
+  "selectCity": "Select city",
+  "selectStreet": "Select street",
+  "selectProperty": "Select property",
+  "selectPropertyNumber": "Select property number",
+  "noProperties": "No properties - check logs",
+  "showSchedule": "SHOW SCHEDULE",
+  "loadingSectors": "Loading sectors...",
+  "loadingSectorsError": "Error loading sectors",
+  "selectSectorAndLocality": "Select sector and locality",
+  "toFindSchedule": "To find the schedule, select an address from the list below or use manual search.",
+  
+  "favoriteLocations": "Favorite locations",
+  "recentLocations": "Recent locations",
+  "recentSearches": "Recent searches",
+  "addedToFavorites": "Added to favorites",
+  "removedFromFavorites": "Removed from favorites",
+  "orSelectNewLocation": "Or select a new location using the dropdowns above",
+  
+  "wasteSchedule": "Waste Schedule",
+  "wasteCollection": "Waste collection",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "nextWeek": "Next week",
+  "wasteToday": "Waste today",
+  "todayCollection": "Today's collection: ",
+  "wasteType": "Waste type",
+  "collectionTime": "Collection time",
+  "container": "Container",
+  "frequency": "Frequency",
+  
+  "wasteDatabase": "Waste Database",
+  "searchWaste": "SEARCH",
+  "waste": "WASTE",
+  "enterWasteName": "Enter waste name",
+  "searching": "Searching...",
+  "noResultsFor": "No waste starting with \"{query}\"",
+  "@noResultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "whereToThrow": "Where to throw:",
+  "or": "or:",
+  "wasteGroup": "Waste group:",
+  "searchAgain": "Search again",
+  "checkWhereToThrow": "Check where to throw",
+  "minThreeCharacters": "Enter at least 3 characters to search for waste",
+  
+  "howToSegregate": "HOW TO SEGREGATE?",
+  "segregationGuide": "Segregation guide",
+  "instructions": "Instructions",
+  "whatCanBeThrown": "What can be thrown",
+  "whatCannotBeThrown": "What cannot be thrown",
+  "preparation": "Preparation",
+  "notes": "Notes",
+  "attention": "Attention:",
+  "doNotThrow": "Do not throw:",
+  
+  "mixed": "Mixed",
+  "paper": "Paper",
+  "glass": "Glass",
+  "plastic": "Metals and Plastics",
+  "bio": "Bio",
+  "ash": "Ash",
+  "bulky": "Bulky",
+  "green": "Green waste",
+  
+  "newspapersAndMagazines": "• Newspapers and magazines",
+  "cardboardAndPaperboard": "• Cardboard and paperboard",
+  "officePaper": "• Office paper",
+  "booksWithoutCovers": "• Books (without covers)",
+  "dirtyPaper": "• Dirty paper",
+  "wallpaper": "• Wallpaper",
+  "waxedPaper": "• Waxed paper",
+  "glassBottles": "• Glass bottles",
+  "glassJars": "• Glass jars",
+  "glassPackaging": "• Glass packaging",
+  "windowGlass": "• Window glass",
+  "mirrors": "• Mirrors",
+  "porcelain": "• Porcelain",
+  "aluminumCans": "• Aluminum cans",
+  "steelCans": "• Steel cans",
+  "plasticPackaging": "• Plastic packaging",
+  "drinkCartons": "• Drink cartons",
+  "batteries": "• Batteries",
+  "electronics": "• Electronics",
+  "foodScraps": "• Food scraps",
+  "eggShells": "• Egg shells",
+  "coffeeAndTeaGrounds": "• Coffee and tea grounds",
+  "vegetableAndFruitPeels": "• Vegetable and fruit peels",
+  "meatAndFish": "• Meat and fish",
+  "bones": "• Bones",
+  "oil": "• Oil",
+  "furnaceAsh": "• Furnace ash",
+  "fireplaceAsh": "• Fireplace ash",
+  "slag": "• Slag",
+  "cigaretteAsh": "• Cigarette ash",
+  "otherWaste": "• Other waste",
+  "furniture": "• Furniture",
+  "appliances": "• Appliances",
+  "bicycles": "• Bicycles",
+  "mattresses": "• Mattresses",
+  "callForCollection": "• Call for collection",
+  "placeInFront": "• Place in front of property",
+  
+  "grassClippings": "• Grass clippings",
+  "leaves": "• Leaves",
+  "branches": "• Branches",
+  "hedgeTrimmings": "• Hedge trimmings",
+  "plantWaste": "• Plant waste",
+  "doNotThrowGreen": "• Do not throw:",
+  "soilAndStones": "• Soil and stones",
+  "foodWaste": "• Food waste",
+  
+  "nonRecyclableWaste": "• Waste that cannot be recycled",
+  "dirtyPackaging": "• Dirty packaging",
+  "hygienicWaste": "• Hygienic waste",
+  "hazardousWaste": "• Hazardous waste",
+  
+  "reminder": "Reminder",
+  "notificationTime": "Notification time",
+  "locationAccess": "Location access",
+  "language": "Language",
+  "appVersion": "App version",
+  "copyright": "Copyright",
+  "testNotifications": "Test notifications",
+  "test": "Test",
+  "check": "Check",
+  "scheduledNotifications": "Scheduled notifications",
+  "testNotificationSent": "Test notification sent",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "polish": "Polish",
+  "english": "English",
+  
+  "wasteReminder": "Waste reminder",
+  "checkWasteScheduleToday": "Check today's waste collection schedule",
+  
+  "permissionsRequired": "Permissions required",
+  "permissionMessage": "To use this feature, you must grant permissions to {permissionType} in app settings.",
+  "@permissionMessage": {
+    "placeholders": {
+      "permissionType": {
+        "type": "String"
+      }
+    }
+  },
+  "openSettings": "Open settings",
+  
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  
+  "january": "January",
+  "february": "February",
+  "march": "March",
+  "april": "April",
+  "may": "May",
+  "june": "June",
+  "july": "July",
+  "august": "August",
+  "september": "September",
+  "october": "October",
+  "november": "November",
+  "december": "December",
+  
+  "noInternetConnection": "No internet connection. Check your connection and try again.",
+  "serverError": "Server error. Please try again later.",
+  "unknownError": "Unexpected error",
+  "loadingError": "Error loading data",
+  "tryAgainLater": "Please try again later",
+  "timeoutError": "Request timeout. Check your internet connection.",
+  "requestCancelled": "Request was cancelled.",
+  "scheduleNotFound": "Schedule not found for this address.",
+  "fieldCannotBeEmpty": "{fieldName} cannot be empty",
+  "@fieldCannotBeEmpty": {
+    "placeholders": {
+      "fieldName": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldTooLong": "{fieldName} is too long (max {maxLength} characters)",
+  "@fieldTooLong": {
+    "placeholders": {
+      "fieldName": {
+        "type": "String"
+      },
+      "maxLength": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingSchedule": "Error loading schedule",
+  "errorLoadingSectors": "Error loading sectors",
+  "errorLoadingStreets": "Error loading streets",
+  "errorLoadingProperties": "Error loading properties",
+  "errorLoadingDetails": "Error loading details",
+  "errorSearchingWaste": "Error searching waste",
+  "serverErrorCode": "Server error: {code}",
+  "@serverErrorCode": {
+    "placeholders": {
+      "code": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "scheduleTooltip": "Schedule",
+  "knowledgeBaseTooltip": "Knowledge Base",
+  "shopTooltip": "KOMA Shop",
+  "bokTooltip": "BOK Portal",
+  "notificationsTooltip": "Notifications",
+  "settingsTooltip": "Settings",
+  "disposalLocations": "Disposal locations",
+  "searchLocationPlaceholder": "Search location...",
+  "all": "All",
+  "loadingLocationsError": "Error loading locations",
+  "noLocations": "No locations",
+  "noLocationsForFilters": "No locations found for selected filters",
+  "map": "Map",
+  "call": "Call",
+  "delete": "Delete",
+  "addressChangedTo": "Address changed to",
+  "externalLinks": "External links",
+  
+  "pageNotFound": "Page not found: {routeName}",
+  "@pageNotFound": {
+    "placeholders": {
+      "routeName": {
+        "type": "String"
+      }
+    }
+  },
+  "returnToMain": "Return to main",
+  "appSubtitle": "Waste Management",
+  "loading": "Loading..."
+}

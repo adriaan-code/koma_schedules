@@ -1,0 +1,795 @@
+{
+  "disposalLocations": [
+    {
+      "id": "pszok_1",
+      "name": "PSZOK Warszawa - Mokotów",
+      "type": "PSZOK",
+      "address": "ul. Żwirki i Wigury 1, 02-091 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "pszok.mokotow@warszawa.pl",
+      "website": "https://www.warszawa.pl/pszok-mokotow",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "07:00-19:00",
+        "tuesday": "07:00-19:00",
+        "wednesday": "07:00-19:00",
+        "thursday": "07:00-19:00",
+        "friday": "07:00-19:00",
+        "saturday": "08:00-16:00",
+        "sunday": "08:00-16:00"
+      },
+      "acceptedWasteTypes": [
+        "elektroniczne",
+        "niebezpieczne",
+        "medyczne",
+        "gabaryty",
+        "budowlane",
+        "motoryzacyjne",
+        "tekstylia",
+        "specjalne"
+      ],
+      "services": [
+        "Bezpłatna zbiórka",
+        "Konsultacje ekologiczne",
+        "Warsztaty recyklingu",
+        "Wymiana odpadów"
+      ],
+      "notes": "Wymagane okazanie dowodu tożsamości. Limit 1 m³ na osobę miesięcznie."
+    },
+    {
+      "id": "pszok_2",
+      "name": "PSZOK Kraków - Nowa Huta",
+      "type": "PSZOK",
+      "address": "ul. Ujastek 1, 31-752 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "pszok.nowahuta@krakow.pl",
+      "website": "https://www.krakow.pl/pszok-nowa-huta",
+      "coordinates": {
+        "latitude": 50.0755,
+        "longitude": 20.0322
+      },
+      "openingHours": {
+        "monday": "07:00-18:00",
+        "tuesday": "07:00-18:00",
+        "wednesday": "07:00-18:00",
+        "thursday": "07:00-18:00",
+        "friday": "07:00-18:00",
+        "saturday": "08:00-15:00",
+        "sunday": "08:00-15:00"
+      },
+      "acceptedWasteTypes": [
+        "elektroniczne",
+        "niebezpieczne",
+        "medyczne",
+        "gabaryty",
+        "budowlane",
+        "motoryzacyjne",
+        "tekstylia"
+      ],
+      "services": [
+        "Bezpłatna zbiórka",
+        "Konsultacje ekologiczne",
+        "Warsztaty recyklingu"
+      ],
+      "notes": "Wymagane okazanie dowodu tożsamości. Limit 0.5 m³ na osobę miesięcznie."
+    },
+    {
+      "id": "apteka_1",
+      "name": "Apteka Zdrowie - Warszawa",
+      "type": "Apteka",
+      "address": "ul. Marszałkowska 1, 00-001 Warszawa",
+      "phone": "+48 22 111 22 33",
+      "email": "info@apteka-zdrowie.pl",
+      "website": "https://www.apteka-zdrowie.pl",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "08:00-20:00",
+        "tuesday": "08:00-20:00",
+        "wednesday": "08:00-20:00",
+        "thursday": "08:00-20:00",
+        "friday": "08:00-20:00",
+        "saturday": "09:00-18:00",
+        "sunday": "10:00-16:00"
+      },
+      "acceptedWasteTypes": [
+        "medyczne"
+      ],
+      "services": [
+        "Zbiórka przeterminowanych leków",
+        "Zbiórka termometrów rtęciowych",
+        "Konsultacje farmaceutyczne"
+      ],
+      "notes": "Bezpłatna zbiórka leków. Wymagane okazanie dowodu tożsamości."
+    },
+    {
+      "id": "sklep_1",
+      "name": "Sklep RTV/AGD Elektro - Warszawa",
+      "type": "Sklep RTV/AGD",
+      "address": "ul. Puławska 1, 02-508 Warszawa",
+      "phone": "+48 22 444 55 66",
+      "email": "info@elektro-sklep.pl",
+      "website": "https://www.elektro-sklep.pl",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "09:00-21:00",
+        "tuesday": "09:00-21:00",
+        "wednesday": "09:00-21:00",
+        "thursday": "09:00-21:00",
+        "friday": "09:00-21:00",
+        "saturday": "09:00-20:00",
+        "sunday": "10:00-18:00"
+      },
+      "acceptedWasteTypes": [
+        "elektroniczne"
+      ],
+      "services": [
+        "Zbiórka starych urządzeń",
+        "Wymiana na nowe",
+        "Bezpłatny odbiór przy zakupie"
+      ],
+      "notes": "Bezpłatny odbiór przy zakupie nowego urządzenia. Wymagane okazanie paragonu."
+    },
+    {
+      "id": "organizacja_1",
+      "name": "Fundacja Pomoc - Warszawa",
+      "type": "Organizacja charytatywna",
+      "address": "ul. Chmielna 1, 00-001 Warszawa",
+      "phone": "+48 22 777 88 99",
+      "email": "info@fundacja-pomoc.pl",
+      "website": "https://www.fundacja-pomoc.pl",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "09:00-17:00",
+        "tuesday": "09:00-17:00",
+        "wednesday": "09:00-17:00",
+        "thursday": "09:00-17:00",
+        "friday": "09:00-17:00",
+        "saturday": "10:00-14:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": [
+        "tekstylia",
+        "zabawki",
+        "książki"
+      ],
+      "services": [
+        "Zbiórka używanych ubrań",
+        "Zbiórka zabawek",
+        "Zbiórka książek",
+        "Pomoc potrzebującym"
+      ],
+      "notes": "Przyjmujemy tylko rzeczy w dobrym stanie. Wymagane okazanie dowodu tożsamości."
+    },
+    {
+      "id": "warsztat_1",
+      "name": "Warsztat samochodowy Auto-Service - Warszawa",
+      "type": "Warsztat samochodowy",
+      "address": "ul. Grochowska 1, 04-001 Warszawa",
+      "phone": "+48 22 333 44 55",
+      "email": "info@auto-service.pl",
+      "website": "https://www.auto-service.pl",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "07:00-18:00",
+        "tuesday": "07:00-18:00",
+        "wednesday": "07:00-18:00",
+        "thursday": "07:00-18:00",
+        "friday": "07:00-18:00",
+        "saturday": "08:00-14:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": [
+        "motoryzacyjne"
+      ],
+      "services": [
+        "Zbiórka opon",
+        "Zbiórka oleju silnikowego",
+        "Zbiórka akumulatorów",
+        "Naprawa samochodów"
+      ],
+      "notes": "Bezpłatna zbiórka przy naprawie. Wymagane okazanie dowodu tożsamości."
+    },
+    {
+      "id": "biblioteka_1",
+      "name": "Biblioteka Publiczna - Warszawa",
+      "type": "Biblioteka",
+      "address": "ul. Koszykowa 1, 00-001 Warszawa",
+      "phone": "+48 22 555 66 77",
+      "email": "info@biblioteka-warszawa.pl",
+      "website": "https://www.biblioteka-warszawa.pl",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "10:00-20:00",
+        "tuesday": "10:00-20:00",
+        "wednesday": "10:00-20:00",
+        "thursday": "10:00-20:00",
+        "friday": "10:00-20:00",
+        "saturday": "10:00-18:00",
+        "sunday": "10:00-16:00"
+      },
+      "acceptedWasteTypes": [
+        "książki"
+      ],
+      "services": [
+        "Zbiórka książek",
+        "Wymiana książek",
+        "Konsultacje biblioteczne"
+      ],
+      "notes": "Przyjmujemy tylko książki w dobrym stanie. Wymagane okazanie dowodu tożsamości."
+    },
+    {
+      "id": "kontener_1",
+      "name": "Kontener na tekstylia - Warszawa",
+      "type": "Kontener",
+      "address": "ul. Marszałkowska 100, 00-001 Warszawa",
+      "phone": "+48 22 999 88 77",
+      "email": "info@kontener-tekstylia.pl",
+      "website": "https://www.kontener-tekstylia.pl",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "24/7",
+        "tuesday": "24/7",
+        "wednesday": "24/7",
+        "thursday": "24/7",
+        "friday": "24/7",
+        "saturday": "24/7",
+        "sunday": "24/7"
+      },
+      "acceptedWasteTypes": [
+        "tekstylia"
+      ],
+      "services": [
+        "Zbiórka używanych ubrań",
+        "Zbiórka tekstyliów",
+        "Pomoc potrzebującym"
+      ],
+      "notes": "Kontener dostępny 24/7. Przyjmujemy tylko rzeczy w dobrym stanie."
+    },
+    {
+      "id": "pszok_6",
+      "name": "PSZOK Warszawa Mokotów",
+      "type": "PSZOK",
+      "address": "ul. Puławska 123, 02-508 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "mokotow@pszok.warszawa.pl",
+      "website": "https://www.pszok.warszawa.pl/mokotow",
+      "coordinates": {
+        "latitude": 52.1936,
+        "longitude": 21.0342
+      },
+      "openingHours": {
+        "monday": "7:00-19:00",
+        "tuesday": "7:00-19:00",
+        "wednesday": "7:00-19:00",
+        "thursday": "7:00-19:00",
+        "friday": "7:00-19:00",
+        "saturday": "8:00-16:00",
+        "sunday": "8:00-16:00"
+      },
+      "acceptedWasteTypes": ["papier", "szkło", "metal", "plastik", "bio", "elektronika", "tekstylia", "budowlane", "motoryzacyjne", "ogród", "żywność", "zmieszane", "niebezpieczne", "medyczne", "chemia", "zabawki", "sport", "biuro", "kuchnia", "łazienka", "sypialnia", "salon", "outdoor", "narzędzia", "książki", "biżuteria", "kosmetyki", "zwierzęta", "sezonowe", "specjalne"],
+      "services": ["Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja ekologiczna", "Recykling", "Kompostowanie", "Naprawa", "Wymiana", "Sprzedaż używanych przedmiotów"],
+      "notes": "Największy PSZOK w Warszawie. Przyjmuje wszystkie typy odpadów. Organizuje warsztaty ekologiczne."
+    },
+    {
+      "id": "pszok_7",
+      "name": "PSZOK Kraków Nowa Huta",
+      "type": "PSZOK",
+      "address": "ul. Hutnicza 45, 31-123 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "nowahuta@pszok.krakow.pl",
+      "website": "https://www.pszok.krakow.pl/nowahuta",
+      "coordinates": {
+        "latitude": 50.0755,
+        "longitude": 20.0430
+      },
+      "openingHours": {
+        "monday": "6:00-20:00",
+        "tuesday": "6:00-20:00",
+        "wednesday": "6:00-20:00",
+        "thursday": "6:00-20:00",
+        "friday": "6:00-20:00",
+        "saturday": "7:00-17:00",
+        "sunday": "7:00-17:00"
+      },
+      "acceptedWasteTypes": ["papier", "szkło", "metal", "plastik", "bio", "elektronika", "tekstylia", "budowlane", "motoryzacyjne", "ogród", "żywność", "zmieszane", "niebezpieczne", "medyczne", "chemia", "zabawki", "sport", "biuro", "kuchnia", "łazienka", "sypialnia", "salon", "outdoor", "narzędzia", "książki", "biżuteria", "kosmetyki", "zwierzęta", "sezonowe", "specjalne"],
+      "services": ["Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja ekologiczna", "Recykling", "Kompostowanie", "Naprawa", "Wymiana", "Sprzedaż używanych przedmiotów"],
+      "notes": "Nowoczesny PSZOK z zaawansowanymi technologiami recyklingu. Organizuje warsztaty dla dzieci."
+    },
+    {
+      "id": "pszok_8",
+      "name": "PSZOK Gdańsk Wrzeszcz",
+      "type": "PSZOK",
+      "address": "ul. Grunwaldzka 78, 80-244 Gdańsk",
+      "phone": "+48 58 123 45 67",
+      "email": "wrzeszcz@pszok.gdansk.pl",
+      "website": "https://www.pszok.gdansk.pl/wrzeszcz",
+      "coordinates": {
+        "latitude": 54.3722,
+        "longitude": 18.6383
+      },
+      "openingHours": {
+        "monday": "7:00-18:00",
+        "tuesday": "7:00-18:00",
+        "wednesday": "7:00-18:00",
+        "thursday": "7:00-18:00",
+        "friday": "7:00-18:00",
+        "saturday": "8:00-15:00",
+        "sunday": "8:00-15:00"
+      },
+      "acceptedWasteTypes": ["papier", "szkło", "metal", "plastik", "bio", "elektronika", "tekstylia", "budowlane", "motoryzacyjne", "ogród", "żywność", "zmieszane", "niebezpieczne", "medyczne", "chemia", "zabawki", "sport", "biuro", "kuchnia", "łazienka", "sypialnia", "salon", "outdoor", "narzędzia", "książki", "biżuteria", "kosmetyki", "zwierzęta", "sezonowe", "specjalne"],
+      "services": ["Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja ekologiczna", "Recykling", "Kompostowanie", "Naprawa", "Wymiana", "Sprzedaż używanych przedmiotów"],
+      "notes": "PSZOK z naciskiem na recykling morski. Organizuje akcje sprzątania plaż."
+    },
+    {
+      "id": "pharmacy_6",
+      "name": "Apteka Pod Orłem",
+      "type": "Apteka",
+      "address": "ul. Floriańska 15, 31-019 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "podorlem@apteka.pl",
+      "website": "https://www.apteka.pl/podorlem",
+      "coordinates": {
+        "latitude": 50.0614,
+        "longitude": 19.9372
+      },
+      "openingHours": {
+        "monday": "8:00-20:00",
+        "tuesday": "8:00-20:00",
+        "wednesday": "8:00-20:00",
+        "thursday": "8:00-20:00",
+        "friday": "8:00-20:00",
+        "saturday": "9:00-18:00",
+        "sunday": "10:00-16:00"
+      },
+      "acceptedWasteTypes": ["leki", "opakowania po lekach", "termometry", "strzykawki", "medyczne"],
+      "services": ["Zbiórka leków", "Konsultacje farmaceutyczne", "Bezpłatna zbiórka", "Edukacja zdrowotna"],
+      "notes": "Zbiera przeterminowane leki i opakowania po lekach. Organizuje akcje edukacyjne."
+    },
+    {
+      "id": "pharmacy_7",
+      "name": "Apteka Zdrowie",
+      "type": "Apteka",
+      "address": "ul. Marszałkowska 123, 00-001 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "zdrowie@apteka.pl",
+      "website": "https://www.apteka.pl/zdrowie",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "24/7",
+        "tuesday": "24/7",
+        "wednesday": "24/7",
+        "thursday": "24/7",
+        "friday": "24/7",
+        "saturday": "24/7",
+        "sunday": "24/7"
+      },
+      "acceptedWasteTypes": ["leki", "opakowania po lekach", "termometry", "strzykawki", "medyczne"],
+      "services": ["Zbiórka leków", "Konsultacje farmaceutyczne", "Bezpłatna zbiórka", "Edukacja zdrowotna", "Apteka całodobowa"],
+      "notes": "Apteka całodobowa. Zbiera przeterminowane leki 24/7. Organizuje warsztaty zdrowotne."
+    },
+    {
+      "id": "pharmacy_8",
+      "name": "Apteka Nad Morzem",
+      "type": "Apteka",
+      "address": "ul. Długi Targ 45, 80-828 Gdańsk",
+      "phone": "+48 58 123 45 67",
+      "email": "nadmorzem@apteka.pl",
+      "website": "https://www.apteka.pl/nadmorzem",
+      "coordinates": {
+        "latitude": 54.3482,
+        "longitude": 18.6532
+      },
+      "openingHours": {
+        "monday": "8:00-19:00",
+        "tuesday": "8:00-19:00",
+        "wednesday": "8:00-19:00",
+        "thursday": "8:00-19:00",
+        "friday": "8:00-19:00",
+        "saturday": "9:00-17:00",
+        "sunday": "10:00-15:00"
+      },
+      "acceptedWasteTypes": ["leki", "opakowania po lekach", "termometry", "strzykawki", "medyczne"],
+      "services": ["Zbiórka leków", "Konsultacje farmaceutyczne", "Bezpłatna zbiórka", "Edukacja zdrowotna"],
+      "notes": "Zbiera przeterminowane leki i opakowania po lekach. Organizuje akcje zdrowotne."
+    },
+    {
+      "id": "rtv_agd_6",
+      "name": "Media Expert",
+      "type": "Sklep RTV/AGD",
+      "address": "ul. Grunwaldzka 123, 80-244 Gdańsk",
+      "phone": "+48 58 123 45 67",
+      "email": "gdansk@mediaexpert.pl",
+      "website": "https://www.mediaexpert.pl/gdansk",
+      "coordinates": {
+        "latitude": 54.3722,
+        "longitude": 18.6383
+      },
+      "openingHours": {
+        "monday": "9:00-21:00",
+        "tuesday": "9:00-21:00",
+        "wednesday": "9:00-21:00",
+        "thursday": "9:00-21:00",
+        "friday": "9:00-21:00",
+        "saturday": "9:00-20:00",
+        "sunday": "10:00-19:00"
+      },
+      "acceptedWasteTypes": ["elektronika", "telefony", "komputery", "telewizory", "sprzęt AGD", "baterie", "akumulatory"],
+      "services": ["Zbiórka elektroodpadów", "Bezpłatna zbiórka", "Konsultacje", "Naprawa", "Wymiana", "Recykling"],
+      "notes": "Zbiera elektroodpady i baterie. Oferuje usługi naprawy i wymiany."
+    },
+    {
+      "id": "rtv_agd_7",
+      "name": "RTV Euro AGD",
+      "type": "Sklep RTV/AGD",
+      "address": "ul. Puławska 123, 02-508 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "warszawa@rtveuroagd.pl",
+      "website": "https://www.rtveuroagd.pl/warszawa",
+      "coordinates": {
+        "latitude": 52.1936,
+        "longitude": 21.0342
+      },
+      "openingHours": {
+        "monday": "9:00-21:00",
+        "tuesday": "9:00-21:00",
+        "wednesday": "9:00-21:00",
+        "thursday": "9:00-21:00",
+        "friday": "9:00-21:00",
+        "saturday": "9:00-20:00",
+        "sunday": "10:00-19:00"
+      },
+      "acceptedWasteTypes": ["elektronika", "telefony", "komputery", "telewizory", "sprzęt AGD", "baterie", "akumulatory"],
+      "services": ["Zbiórka elektroodpadów", "Bezpłatna zbiórka", "Konsultacje", "Naprawa", "Wymiana", "Recykling"],
+      "notes": "Zbiera elektroodpady i baterie. Oferuje usługi naprawy i wymiany."
+    },
+    {
+      "id": "rtv_agd_8",
+      "name": "Komputronik",
+      "type": "Sklep RTV/AGD",
+      "address": "ul. Floriańska 15, 31-019 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "krakow@komputronik.pl",
+      "website": "https://www.komputronik.pl/krakow",
+      "coordinates": {
+        "latitude": 50.0614,
+        "longitude": 19.9372
+      },
+      "openingHours": {
+        "monday": "9:00-21:00",
+        "tuesday": "9:00-21:00",
+        "wednesday": "9:00-21:00",
+        "thursday": "9:00-21:00",
+        "friday": "9:00-21:00",
+        "saturday": "9:00-20:00",
+        "sunday": "10:00-19:00"
+      },
+      "acceptedWasteTypes": ["elektronika", "telefony", "komputery", "telewizory", "sprzęt AGD", "baterie", "akumulatory"],
+      "services": ["Zbiórka elektroodpadów", "Bezpłatna zbiórka", "Konsultacje", "Naprawa", "Wymiana", "Recykling"],
+      "notes": "Zbiera elektroodpady i baterie. Oferuje usługi naprawy i wymiany."
+    },
+    {
+      "id": "charity_6",
+      "name": "Caritas Polska",
+      "type": "Organizacja charytatywna",
+      "address": "ul. Skwer Kardynała Wyszyńskiego 9, 01-015 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "warszawa@caritas.pl",
+      "website": "https://www.caritas.pl/warszawa",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "8:00-16:00",
+        "tuesday": "8:00-16:00",
+        "wednesday": "8:00-16:00",
+        "thursday": "8:00-16:00",
+        "friday": "8:00-16:00",
+        "saturday": "9:00-13:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": ["ubrania", "tekstylia", "zabawki", "książki", "meble", "sprzęt AGD", "elektronika", "biżuteria", "kosmetyki", "zwierzęta", "sezonowe"],
+      "services": ["Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja", "Pomoc społeczna", "Recykling", "Naprawa", "Wymiana", "Sprzedaż używanych przedmiotów"],
+      "notes": "Organizacja charytatywna. Zbiera używane przedmioty dla potrzebujących. Organizuje warsztaty."
+    },
+    {
+      "id": "charity_7",
+      "name": "Polski Czerwony Krzyż",
+      "type": "Organizacja charytatywna",
+      "address": "ul. Mokotowska 14, 00-561 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "warszawa@pck.pl",
+      "website": "https://www.pck.pl/warszawa",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "8:00-16:00",
+        "tuesday": "8:00-16:00",
+        "wednesday": "8:00-16:00",
+        "thursday": "8:00-16:00",
+        "friday": "8:00-16:00",
+        "saturday": "9:00-13:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": ["ubrania", "tekstylia", "zabawki", "książki", "meble", "sprzęt AGD", "elektronika", "biżuteria", "kosmetyki", "zwierzęta", "sezonowe"],
+      "services": ["Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja", "Pomoc społeczna", "Recykling", "Naprawa", "Wymiana", "Sprzedaż używanych przedmiotów"],
+      "notes": "Organizacja charytatywna. Zbiera używane przedmioty dla potrzebujących. Organizuje warsztaty."
+    },
+    {
+      "id": "charity_8",
+      "name": "Fundacja Pomocy Dzieciom",
+      "type": "Organizacja charytatywna",
+      "address": "ul. Floriańska 15, 31-019 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "krakow@fundacja.pl",
+      "website": "https://www.fundacja.pl/krakow",
+      "coordinates": {
+        "latitude": 50.0614,
+        "longitude": 19.9372
+      },
+      "openingHours": {
+        "monday": "8:00-16:00",
+        "tuesday": "8:00-16:00",
+        "wednesday": "8:00-16:00",
+        "thursday": "8:00-16:00",
+        "friday": "8:00-16:00",
+        "saturday": "9:00-13:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": ["ubrania", "tekstylia", "zabawki", "książki", "meble", "sprzęt AGD", "elektronika", "biżuteria", "kosmetyki", "zwierzęta", "sezonowe"],
+      "services": ["Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja", "Pomoc społeczna", "Recykling", "Naprawa", "Wymiana", "Sprzedaż używanych przedmiotów"],
+      "notes": "Fundacja pomocy dzieciom. Zbiera używane przedmioty dla dzieci. Organizuje warsztaty."
+    },
+    {
+      "id": "garage_6",
+      "name": "Auto Serwis",
+      "type": "Warsztat samochodowy",
+      "address": "ul. Hutnicza 45, 31-123 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "krakow@autoserwis.pl",
+      "website": "https://www.autoserwis.pl/krakow",
+      "coordinates": {
+        "latitude": 50.0755,
+        "longitude": 20.0430
+      },
+      "openingHours": {
+        "monday": "7:00-18:00",
+        "tuesday": "7:00-18:00",
+        "wednesday": "7:00-18:00",
+        "thursday": "7:00-18:00",
+        "friday": "7:00-18:00",
+        "saturday": "8:00-14:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": ["olej", "akumulatory", "opony", "filtry", "części samochodowe", "motoryzacyjne"],
+      "services": ["Zbiórka odpadów motoryzacyjnych", "Bezpłatna zbiórka", "Konsultacje", "Naprawa", "Wymiana", "Recykling"],
+      "notes": "Warsztat samochodowy. Zbiera odpady motoryzacyjne. Oferuje usługi naprawy i wymiany."
+    },
+    {
+      "id": "garage_7",
+      "name": "Moto Expert",
+      "type": "Warsztat samochodowy",
+      "address": "ul. Grunwaldzka 78, 80-244 Gdańsk",
+      "phone": "+48 58 123 45 67",
+      "email": "gdansk@motoexpert.pl",
+      "website": "https://www.motoexpert.pl/gdansk",
+      "coordinates": {
+        "latitude": 54.3722,
+        "longitude": 18.6383
+      },
+      "openingHours": {
+        "monday": "7:00-18:00",
+        "tuesday": "7:00-18:00",
+        "wednesday": "7:00-18:00",
+        "thursday": "7:00-18:00",
+        "friday": "7:00-18:00",
+        "saturday": "8:00-14:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": ["olej", "akumulatory", "opony", "filtry", "części samochodowe", "motoryzacyjne"],
+      "services": ["Zbiórka odpadów motoryzacyjnych", "Bezpłatna zbiórka", "Konsultacje", "Naprawa", "Wymiana", "Recykling"],
+      "notes": "Warsztat samochodowy. Zbiera odpady motoryzacyjne. Oferuje usługi naprawy i wymiany."
+    },
+    {
+      "id": "garage_8",
+      "name": "Auto Plus",
+      "type": "Warsztat samochodowy",
+      "address": "ul. Puławska 123, 02-508 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "warszawa@autoplus.pl",
+      "website": "https://www.autoplus.pl/warszawa",
+      "coordinates": {
+        "latitude": 52.1936,
+        "longitude": 21.0342
+      },
+      "openingHours": {
+        "monday": "7:00-18:00",
+        "tuesday": "7:00-18:00",
+        "wednesday": "7:00-18:00",
+        "thursday": "7:00-18:00",
+        "friday": "7:00-18:00",
+        "saturday": "8:00-14:00",
+        "sunday": "Zamknięte"
+      },
+      "acceptedWasteTypes": ["olej", "akumulatory", "opony", "filtry", "części samochodowe", "motoryzacyjne"],
+      "services": ["Zbiórka odpadów motoryzacyjnych", "Bezpłatna zbiórka", "Konsultacje", "Naprawa", "Wymiana", "Recykling"],
+      "notes": "Warsztat samochodowy. Zbiera odpady motoryzacyjne. Oferuje usługi naprawy i wymiany."
+    },
+    {
+      "id": "library_6",
+      "name": "Biblioteka Publiczna",
+      "type": "Biblioteka",
+      "address": "ul. Floriańska 15, 31-019 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "krakow@biblioteka.pl",
+      "website": "https://www.biblioteka.pl/krakow",
+      "coordinates": {
+        "latitude": 50.0614,
+        "longitude": 19.9372
+      },
+      "openingHours": {
+        "monday": "8:00-20:00",
+        "tuesday": "8:00-20:00",
+        "wednesday": "8:00-20:00",
+        "thursday": "8:00-20:00",
+        "friday": "8:00-20:00",
+        "saturday": "9:00-17:00",
+        "sunday": "10:00-16:00"
+      },
+      "acceptedWasteTypes": ["książki", "czasopisma", "materiały edukacyjne", "mapy", "atlasy"],
+      "services": ["Zbiórka książek", "Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja", "Recykling", "Wymiana", "Sprzedaż używanych książek"],
+      "notes": "Biblioteka publiczna. Zbiera używane książki i materiały edukacyjne. Organizuje warsztaty."
+    },
+    {
+      "id": "library_7",
+      "name": "Biblioteka Uniwersytecka",
+      "type": "Biblioteka",
+      "address": "ul. Marszałkowska 123, 00-001 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "warszawa@biblioteka.pl",
+      "website": "https://www.biblioteka.pl/warszawa",
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "openingHours": {
+        "monday": "8:00-22:00",
+        "tuesday": "8:00-22:00",
+        "wednesday": "8:00-22:00",
+        "thursday": "8:00-22:00",
+        "friday": "8:00-22:00",
+        "saturday": "9:00-18:00",
+        "sunday": "10:00-17:00"
+      },
+      "acceptedWasteTypes": ["książki", "czasopisma", "materiały edukacyjne", "mapy", "atlasy"],
+      "services": ["Zbiórka książek", "Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja", "Recykling", "Wymiana", "Sprzedaż używanych książek"],
+      "notes": "Biblioteka uniwersytecka. Zbiera używane książki i materiały edukacyjne. Organizuje warsztaty."
+    },
+    {
+      "id": "library_8",
+      "name": "Biblioteka Miejska",
+      "type": "Biblioteka",
+      "address": "ul. Długi Targ 45, 80-828 Gdańsk",
+      "phone": "+48 58 123 45 67",
+      "email": "gdansk@biblioteka.pl",
+      "website": "https://www.biblioteka.pl/gdansk",
+      "coordinates": {
+        "latitude": 54.3482,
+        "longitude": 18.6532
+      },
+      "openingHours": {
+        "monday": "8:00-20:00",
+        "tuesday": "8:00-20:00",
+        "wednesday": "8:00-20:00",
+        "thursday": "8:00-20:00",
+        "friday": "8:00-20:00",
+        "saturday": "9:00-17:00",
+        "sunday": "10:00-16:00"
+      },
+      "acceptedWasteTypes": ["książki", "czasopisma", "materiały edukacyjne", "mapy", "atlasy"],
+      "services": ["Zbiórka książek", "Bezpłatna zbiórka", "Konsultacje", "Warsztaty", "Edukacja", "Recykling", "Wymiana", "Sprzedaż używanych książek"],
+      "notes": "Biblioteka miejska. Zbiera używane książki i materiały edukacyjne. Organizuje warsztaty."
+    },
+    {
+      "id": "container_6",
+      "name": "Kontener na tekstylia",
+      "type": "Kontener",
+      "address": "ul. Grunwaldzka 123, 80-244 Gdańsk",
+      "phone": "+48 58 123 45 67",
+      "email": "gdansk@kontener.pl",
+      "website": "https://www.kontener.pl/gdansk",
+      "coordinates": {
+        "latitude": 54.3722,
+        "longitude": 18.6383
+      },
+      "openingHours": {
+        "monday": "24/7",
+        "tuesday": "24/7",
+        "wednesday": "24/7",
+        "thursday": "24/7",
+        "friday": "24/7",
+        "saturday": "24/7",
+        "sunday": "24/7"
+      },
+      "acceptedWasteTypes": ["ubrania", "tekstylia", "buty", "torby", "pościel"],
+      "services": ["Bezpłatna zbiórka", "Kontener 24/7", "Recykling"],
+      "notes": "Kontener na tekstylia dostępny 24/7. Zbiera używane ubrania i tekstylia."
+    },
+    {
+      "id": "container_7",
+      "name": "Kontener na książki",
+      "type": "Kontener",
+      "address": "ul. Puławska 123, 02-508 Warszawa",
+      "phone": "+48 22 123 45 67",
+      "email": "warszawa@kontener.pl",
+      "website": "https://www.kontener.pl/warszawa",
+      "coordinates": {
+        "latitude": 52.1936,
+        "longitude": 21.0342
+      },
+      "openingHours": {
+        "monday": "24/7",
+        "tuesday": "24/7",
+        "wednesday": "24/7",
+        "thursday": "24/7",
+        "friday": "24/7",
+        "saturday": "24/7",
+        "sunday": "24/7"
+      },
+      "acceptedWasteTypes": ["książki", "czasopisma", "materiały edukacyjne", "mapy", "atlasy"],
+      "services": ["Bezpłatna zbiórka", "Kontener 24/7", "Recykling"],
+      "notes": "Kontener na książki dostępny 24/7. Zbiera używane książki i materiały edukacyjne."
+    },
+    {
+      "id": "container_8",
+      "name": "Kontener na zabawki",
+      "type": "Kontener",
+      "address": "ul. Floriańska 15, 31-019 Kraków",
+      "phone": "+48 12 345 67 89",
+      "email": "krakow@kontener.pl",
+      "website": "https://www.kontener.pl/krakow",
+      "coordinates": {
+        "latitude": 50.0614,
+        "longitude": 19.9372
+      },
+      "openingHours": {
+        "monday": "24/7",
+        "tuesday": "24/7",
+        "wednesday": "24/7",
+        "thursday": "24/7",
+        "friday": "24/7",
+        "saturday": "24/7",
+        "sunday": "24/7"
+      },
+      "acceptedWasteTypes": ["zabawki", "lalki", "samochodziki", "klocki", "puzzle"],
+      "services": ["Bezpłatna zbiórka", "Kontener 24/7", "Recykling"],
+      "notes": "Kontener na zabawki dostępny 24/7. Zbiera używane zabawki dla dzieci."
+    }
+  ]
+}

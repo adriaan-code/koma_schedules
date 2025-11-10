@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KOMA App — Dokumentacja</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-inner">
+        <img src="../assets/img/logo.png" alt="KOMA" class="logo" />
+        <h1 data-i18n="title">KOMA App — Dokumentacja</h1>
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="Szukaj w dokumentacji…" />
+        </div>
+        <div class="lang-switcher">
+          <label for="langSelect" class="visually-hidden">Język</label>
+          <select id="langSelect" aria-label="Language">
+            <option value="pl">Polski</option>
+            <option value="en">English</option>
+            <option value="uk">Українська</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar">
+        <ul class="nav">
+          <li><a href="#overview" data-i18n="nav.overview">Przegląd</a></li>
+          <li><a href="#getting-started" data-i18n="nav.gettingStarted">Uruchomienie</a></li>
+          <li><a href="#architecture" data-i18n="nav.architecture">Architektura</a></li>
+          <li><a href="#localization" data-i18n="nav.localization">Lokalizacja (l10n)</a></li>
+          <li><a href="#notifications" data-i18n="nav.notifications">Powiadomienia</a></li>
+          <li><a href="#api" data-i18n="nav.api">Integracja z API</a></li>
+          <li><a href="#navigation" data-i18n="nav.navigation">Nawigacja i Navbar</a></li>
+          <li><a href="#screens" data-i18n="nav.screens">Ekrany</a></li>
+          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#advanced" data-i18n="nav.advanced">Zaawansowane użycie</a></li>
+          <li><a href="#services" data-i18n="nav.services">Serwisy</a></li>
+          <li><a href="#models" data-i18n="nav.models">Modele</a></li>
+          <li><a href="#theming" data-i18n="nav.theming">Motyw i UI</a></li>
+          <li><a href="#accessibility" data-i18n="nav.accessibility">Dostępność</a></li>
+          <li><a href="#testing" data-i18n="nav.testing">Testy i analiza</a></li>
+          <li><a href="#troubleshooting" data-i18n="nav.troubleshooting">Rozwiązywanie problemów</a></li>
+          <li><a href="#limitations" data-i18n="nav.limitations">Znane ograniczenia</a></li>
+          <li><a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
+          <li><a href="#glossary" data-i18n="nav.glossary">Słowniczek</a></li>
+          <li><a href="#versioning" data-i18n="nav.versioning">Wersjonowanie</a></li>
+          <li><a href="#changelog" data-i18n="nav.changelog">Zakres zmian</a></li>
+          <li><a href="#links" data-i18n="nav.links">Linki</a></li>
+          <li><a href="#security" data-i18n="nav.security">Bezpieczeństwo</a></li>
+          <li><a href="#performance" data-i18n="nav.performance">Wydajność</a></li>
+          <li><a href="#error-handling" data-i18n="nav.errorHandling">Obsługa błędów</a></li>
+          <li><a href="#coding-standards" data-i18n="nav.codingStandards">Standardy kodowania</a></li>
+          <li><a href="#contribution" data-i18n="nav.contribution">Wkład/kontrybucje</a></li>
+          <li><a href="#release" data-i18n="nav.release">Wydania i wersje</a></li>
+          <li><a href="#environments" data-i18n="nav.environments">Środowiska</a></li>
+          <li><a href="#configuration" data-i18n="nav.configuration">Konfiguracja</a></li>
+          <li><a href="#ux-guidelines" data-i18n="nav.ux">Wytyczne UX</a></li>
+          <li><a href="#l10n-guidelines" data-i18n="nav.l10n">Wytyczne lokalizacji</a></li>
+          <li><a href="#notification-matrix" data-i18n="nav.notificationMatrix">Macierz powiadomień</a></li>
+          <li><a href="#api-reference" data-i18n="nav.apiRef">API Reference</a></li>
+          <li><a href="#data-models" data-i18n="nav.dataModels">Modele danych (szczegóły)</a></li>
+          <li><a href="#state-management" data-i18n="nav.state">Zarządzanie stanem</a></li>
+          <li><a href="#logging-monitoring" data-i18n="nav.logging">Logowanie/Monitoring</a></li>
+        </ul>
+      </nav>
+
+      <main id="content">
+        <section class="hero">
+          <div class="grid">
+            <div class="col-12">
+              <h2 data-i18n="hero.heading">Witaj w dokumentacji KOMA App</h2>
+              <p data-i18n="hero.lead">Ta dokumentacja jest przeznaczona zarówno dla użytkowników aplikacji (jak korzystać), jak i dla zespołu technicznego (jak rozwijać i utrzymywać).</p>
+              <p>
+                <a class="btn" href="#user-guide" data-i18n="hero.cta">Przejdź do instrukcji użytkownika</a>
+                <span class="badge">PL</span>
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="overview">
+          <h2>Przegląd</h2>
+          <p>Aplikacja KOMA (Flutter) wyświetla harmonogram odbioru odpadów, szczegóły frakcji, lokalizacje PSZOK, bazę wiedzy, ustawienia i obsługuje lokalne powiadomienia. Obsługiwane języki: polski (pl), angielski (en), ukraiński (uk).</p>
+          <ul>
+            <li><strong>Platformy</strong>: iOS, Android, Web/Desktop (Flutter)</li>
+            <li><strong>Języki</strong>: Dart + Flutter</li>
+            <li><strong>Lokalizacja</strong>: pl, en, uk z użyciem arb i gen_l10n</li>
+            <li><strong>Powiadomienia</strong>: flutter_local_notifications + permission_handler + timezone</li>
+          </ul>
+        </section>
+
+        <section id="getting-started">
+          <h2>Uruchomienie</h2>
+          <h3>Wymagania</h3>
+          <ul>
+            <li>Flutter SDK (Zgodnie z README projektu)</li>
+            <li>Android SDK (dla Androida)</li>
+            <li>CocoaPods (dla iOS) – patrz <a href="../INSTALL_COCOAPODS.md">INSTALL_COCOAPODS.md</a></li>
+          </ul>
+          <h3>Instalacja</h3>
+          <pre><code>flutter pub get
+flutter analyze
+flutter test
+</code></pre>
+          <h3>Uruchomienie</h3>
+          <pre><code>flutter run -d ios   # iOS (po zainstalowaniu CocoaPods)
+flutter run -d android
+</code></pre>
+        </section>
+
+        <section id="architecture">
+          <h2>Architektura</h2>
+          <ul>
+            <li><code>lib/main.dart</code>: punkt startowy, konfiguracja lokalizacji, trasy i motywu</li>
+            <li><code>lib/config/</code>: motyw i konfiguracje (np. <code>app_theme.dart</code>, <code>api_config.dart</code>)</li>
+            <li><code>lib/models/</code>: modele domenowe (<code>address.dart</code>, <code>waste_collection.dart</code>, <code>waste_type.dart</code> …)</li>
+            <li><code>lib/services/</code>: logika i integracje (API, powiadomienia, ustawienia, lokalizacja)</li>
+            <li><code>lib/screens/</code>: ekrany (harmonogram, szczegóły, ustawienia itp.)</li>
+            <li><code>lib/widgets/</code>: komponenty wielokrotnego użytku (AppBar, Nawigacja dolna)</li>
+            <li><code>lib/l10n/</code>: lokalizacje (arb + wygenerowane pliki)</li>
+            <li><code>lib/utils/</code>: pomocnicze (np. <code>date_utils.dart</code>, <code>waste_type_utils.dart</code>)</li>
+          </ul>
+        </section>
+
+        <section id="localization">
+          <h2>Lokalizacja (l10n)</h2>
+          <ul>
+            <li>Pliki: <code>lib/l10n/app_pl.arb</code>, <code>lib/l10n/app_en.arb</code>, <code>lib/l10n/app_uk.arb</code></li>
+            <li>Wspierane języki skonfigurowane w <code>MaterialApp.supportedLocales</code> w <code>main.dart</code></li>
+            <li>Tłumaczenia nazw miesięcy i dni: <code>date_utils.dart</code></li>
+            <li>Tłumaczenia nazw frakcji: <code>waste_type_utils.dart</code></li>
+          </ul>
+          <p>Zmiana języka w aplikacji odbywa się w <code>SettingsScreen</code> (instant switch) i jest zapisywana w <code>SettingsService</code>.</p>
+        </section>
+
+        <section id="notifications">
+          <h2>Powiadomienia</h2>
+          <p>Obsługa: <code>lib/services/notification_service.dart</code>. Używane pakiety: <code>flutter_local_notifications</code>, <code>permission_handler</code>, <code>timezone</code>.</p>
+          <ul>
+            <li>Inicjalizacja iOS/Android, ustawienie strefy czasowej Europa/Warszawa</li>
+            <li>Automatyczna prośba o uprawnienia iOS (bez niestandardowego dialogu)</li>
+            <li>Ustawienia czasu powiadomień w <code>SettingsScreen</code> + zapisywane w <code>SettingsService</code></li>
+            <li>Metody: natychmiastowe testowe, dzienne zaplanowane, odwoływanie wszystkich</li>
+          </ul>
+          <p>Instrukcje i FAQ dla iOS: <a href="../TESTING_NOTIFICATIONS.md">TESTING_NOTIFICATIONS.md</a>. Dla iOS wymagane CocoaPods.</p>
+          <div class="alert alert-warning" data-i18n="alert.notifWarning">
+            Uwaga: Na Androidzie tryb przybliżony może mieć kilkuminutowe odchylenie od ustawionej godziny.
+          </div>
+        </section>
+
+        <section id="user-guide">
+          <h2 data-i18n="user.heading">Instrukcja dla użytkownika</h2>
+          <h3 data-i18n="user.start">Jak zacząć</h3>
+          <ol>
+            <li data-i18n="user.step1">Otwórz aplikację — pojawi się ekran powitalny i następnie główny ekran z dolną nawigacją.</li>
+            <li data-i18n="user.step2">Wybierz adres: przejdź do zakładki <strong>Harmonogram</strong> (ikona po lewej). Jeśli to pierwsze użycie, zobaczysz wyszukiwarkę adresów.</li>
+            <li data-i18n="user.step3">Wpisz ulicę i numer, wybierz propozycję z listy. Aplikacja zapisze ten adres do historii i załaduje harmonogram.</li>
+          </ol>
+
+          <h3 data-i18n="user.schedule">Harmonogram odbiorów</h3>
+          <ul>
+            <li data-i18n="user.schedule1">Na liście znajdziesz daty i nazwy frakcji. Nazwy i miesiące są tłumaczone automatycznie do wybranego języka.</li>
+            <li data-i18n="user.schedule2">Kliknij pozycję, aby otworzyć <strong>Szczegóły frakcji</strong> — zobaczysz opis i wskazówki co wyrzucać, a czego nie.</li>
+          </ul>
+
+          <h3 data-i18n="user.notifications">Powiadomienia</h3>
+          <ul>
+            <li data-i18n="user.notif1">Wejdź w <strong>Ustawienia</strong> (ikona koła zębatego po prawej).</li>
+            <li data-i18n="user.notif2">Włącz przełącznik <em>Powiadomienia</em>, a następnie wybierz <em>Godzinę powiadomień</em>.</li>
+            <li data-i18n="user.notif3">Możesz wysłać <em>Test powiadomień</em>, aby upewnić się, że urządzenie wyświetla je poprawnie.</li>
+          </ul>
+
+          <h3 data-i18n="user.language">Zmiana języka</h3>
+          <ul>
+            <li data-i18n="user.lang1">W <strong>Ustawieniach</strong> rozwiń sekcję <em>Język</em> i wybierz: Polski, English lub Українська.</li>
+            <li data-i18n="user.lang2">Aplikacja natychmiast przełączy się na wybrany język.</li>
+          </ul>
+
+          <h3 data-i18n="user.links">Linki zewnętrzne</h3>
+          <ul>
+            <li data-i18n="user.links1">W dolnej nawigacji środkowa ikona otwiera listę linków: <em>BOK</em> oraz <em>Sklep KOMA</em>.</li>
+            <li data-i18n="user.links2">Po wyborze nastąpi otwarcie przeglądarki z właściwą stroną.</li>
+          </ul>
+
+          <div class="callout" data-i18n="user.tip">
+            Wskazówka: jeśli nie widzisz żadnych pozycji w harmonogramie, sprawdź czy wybrany adres został poprawnie zapisany oraz czy data nie była już w przeszłości. W grudniu widoczne są wszystkie miesiące.
+          </div>
+        </section>
+
+        <section id="api">
+          <h2>Integracja z API</h2>
+          <p>Warstwa: <code>lib/services/api_service.dart</code>. Konfiguracja: <code>lib/config/api_config.dart</code>.</p>
+          <ul>
+            <li>Pobieranie harmonogramu i mapowanie typów odpadów na <code>WasteType</code></li>
+            <li>Mapowanie nowych frakcji: Elektro, Opony, Zielone, Choinki, Inne</li>
+            <li>Klucze lokalizacyjne miesięcy i dni — UI tłumaczy je na nazwy</li>
+          </ul>
+        </section>
+
+        <section id="navigation">
+          <h2>Nawigacja i Navbar</h2>
+          <ul>
+            <li>Główny kontener: <code>MainNavigationScreen</code></li>
+            <li>Nawigacja dolna: <code>widgets/custom_bottom_navigation.dart</code> (custom Row, bez białego paska, kwadratowe boxy, podświetlenie)</li>
+            <li>Linki zewnętrzne (BOK, Sklep) scalone w jedną ikonę z menu rozwijanym (<code>PopupMenuButton</code>)</li>
+            <li>Routing tras w <code>main.dart</code> (np. <code>/waste-schedule</code>)</li>
+          </ul>
+        </section>
+
+        <section id="screens">
+          <h2>Ekrany</h2>
+          <ul>
+            <li><strong>WasteScheduleScreen</strong>: lista odbiorów, tłumaczenia, logika filtrowania od bieżącego miesiąca</li>
+            <li><strong>WasteDetailsScreen</strong>: szczegóły frakcji, baner i ikony/obrazy (dla papieru obraz)</li>
+            <li><strong>SettingsScreen</strong>: język, powiadomienia (czas, toggle, test), dostęp do logów</li>
+            <li><strong>AddressSearchScreen</strong>: wyszukiwanie adresu i nawigacja do harmonogramu</li>
+            <li><strong>DisposalLocationsScreen</strong>: PSZOK — lista, filtry, tłumaczenia UI</li>
+          </ul>
+        </section>
+
+        <section id="gallery">
+          <h2>Galeria</h2>
+          <p>Poniżej przykładowe zrzuty ekranów. Możesz podmienić pliki obrazów w <code>assets/img/</code> i zaktualizować ścieżki.</p>
+          <div class="gallery">
+            <figure>
+              <img src="../assets/img/logo.png" alt="Ekran startowy (przykład)" />
+              <figcaption>Ekran startowy (przykładowy obraz)</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/logo.png" alt="Harmonogram (przykład)" />
+              <figcaption>Harmonogram (przykładowy obraz)</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/logo.png" alt="Ustawienia (przykład)" />
+              <figcaption>Ustawienia (przykładowy obraz)</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="services">
+          <h2>Serwisy</h2>
+          <ul>
+            <li><strong>ApiService</strong>: komunikacja z API, mapowanie frakcji</li>
+            <li><strong>NotificationService</strong>: lokalne powiadomienia + planowanie</li>
+            <li><strong>SettingsService</strong>: zapis ustawień (język, godzina powiadomień)</li>
+            <li><strong>ConnectivityService</strong>: status połączenia</li>
+            <li><strong>LocationHistoryService</strong>: ostatnie adresy</li>
+          </ul>
+        </section>
+
+        <section id="advanced">
+          <h2>Zaawansowane użycie</h2>
+          <h3>Historia adresów</h3>
+          <ul>
+            <li>Aplikacja zapamiętuje ostatnio użyte adresy (<code>LocationHistoryService</code>), dzięki czemu możesz szybko wrócić do poprzednich lokalizacji.</li>
+            <li>Wybór adresu z historii automatycznie przełącza harmonogram.</li>
+          </ul>
+          <h3>Powiadomienia — dokładne vs przybliżone</h3>
+          <ul>
+            <li>Android: jeśli system nie pozwoli na <em>dokładne</em> alarmy, aplikacja planuje je w trybie <em>przybliżonym</em>. Różnica może wynosić kilka minut.</li>
+            <li>iOS: upewnij się, że powiadomienia są włączone w ustawieniach systemowych dla aplikacji KOMA.</li>
+          </ul>
+          <h3>Zmiana języka w locie</h3>
+          <ul>
+            <li>Wybór języka w <strong>Ustawieniach</strong> natychmiast aktualizuje UI (bez restartu aplikacji).</li>
+          </ul>
+        </section>
+
+        <section id="models">
+          <h2>Modele</h2>
+          <ul>
+            <li><strong>WasteType</strong>: enum z rozszerzeniami (w tym: <code>elektro</code>, <code>opony</code>, <code>green</code>)</li>
+            <li><strong>WasteCollection</strong>: pozycja harmonogramu (dzień, miesiąc, typ, nazwa oryginalna)</li>
+            <li><strong>Address</strong>: adres z prefix i numerem</li>
+          </ul>
+        </section>
+
+        <section id="theming">
+          <h2>Motyw i UI</h2>
+          <ul>
+            <li>Centralny motyw: <code>config/app_theme.dart</code> (spacing, kolory, rozmiary ikon/obrazów)</li>
+            <li>Wspólne komponenty: <code>widgets/custom_app_bar.dart</code>, <code>widgets/custom_bottom_navigation.dart</code></li>
+            <li>Wytyczne stylistyczne dostosowane do wymagań użytkownika (np. banery, paddingi)</li>
+          </ul>
+        </section>
+
+        <section id="accessibility">
+          <h2>Dostępność</h2>
+          <ul>
+            <li>Semantics dla kluczowych elementów (etykiety, hinty)</li>
+            <li>Konsekwentny kontrast i focus states</li>
+          </ul>
+        </section>
+
+        <section id="testing">
+          <h2>Testy i analiza</h2>
+          <ul>
+            <li><code>flutter analyze</code> – brak błędów blokujących; ostrzeżenia stylu zależnie od polityki</li>
+            <li><code>flutter test</code> – testy modeli i widgetów przechodzą</li>
+          </ul>
+        </section>
+
+        <section id="security">
+          <h2 data-i18n="sec.heading">Bezpieczeństwo</h2>
+          <div class="alert alert-info" data-i18n="alert.securityInfo">
+            Informacja: Aplikacja nie przechowuje żadnych haseł ani kluczy tajnych w repozytorium.
+          </div>
+          <ul>
+            <li data-i18n="sec.https">HTTPS dla API; brak wrażliwych sekretów w repozytorium.</li>
+            <li data-i18n="sec.localData">Dane lokalne: preferencje i historia adresów w <code>SharedPreferences</code>.</li>
+            <li data-i18n="sec.perms">Uprawnienia ograniczone do minimum: powiadomienia (+ exact alarm na Androidzie jeśli dostępne).</li>
+          </ul>
+        </section>
+
+        <section id="performance">
+          <h2 data-i18n="perf.heading">Wydajność</h2>
+          <ul>
+            <li data-i18n="perf.lazy">Listy budowane leniwie, bez zbędnych rebuildów.</li>
+            <li data-i18n="perf.filter">Optymalizacja filtrowania harmonogramu po miesiącach i dniach.</li>
+            <li data-i18n="perf.async">Brak ciężkich operacji na głównym wątku; I/O asynchroniczne.</li>
+          </ul>
+        </section>
+
+        <section id="error-handling">
+          <h2 data-i18n="err.heading">Obsługa błędów</h2>
+          <div class="alert alert-error" data-i18n="alert.apiError">
+            Błąd: W przypadku odpowiedzi 4xx/5xx aplikacja wyświetla komunikat i zapisuje log w konsoli.
+          </div>
+          <ul>
+            <li data-i18n="err.global">Globalne <code>FlutterError.onError</code> i <code>PlatformDispatcher.onError</code>.</li>
+            <li data-i18n="err.dio">Dio: mapowanie i komunikaty błędów (np. 400/500), fallbacki UI.</li>
+            <li data-i18n="err.notif">Powiadomienia: rozbudowane logi, diagnostyka uprawnień.</li>
+          </ul>
+        </section>
+
+        <section id="coding-standards">
+          <h2 data-i18n="code.heading">Standardy kodowania</h2>
+          <ul>
+            <li data-i18n="code.small">Małe komponenty, czytelne nazwy, brak głębokiego zagnieżdżania.</li>
+            <li data-i18n="code.theme">Wspólne style w <code>AppTheme</code>; modularny podział katalogów.</li>
+            <li data-i18n="code.comments">Komentarze tylko tam, gdzie krytycznie potrzebne.</li>
+          </ul>
+        </section>
+
+        <section id="contribution">
+          <h2 data-i18n="contrib.heading">Wkład/kontrybucje</h2>
+          <ol>
+            <li data-i18n="contrib.branch">Utwórz branch od <em>main</em>.</li>
+            <li data-i18n="contrib.ci">Zapewnij przejście <code>flutter analyze</code> i testów.</li>
+            <li data-i18n="contrib.pr">Wyślij PR z opisem zakresu i wpływu na UI/API.</li>
+          </ol>
+        </section>
+
+        <section id="release">
+          <h2 data-i18n="release.heading">Wydania i wersje</h2>
+          <ul>
+            <li data-i18n="release.semver">SemVer; zmiany UI/UX i tłumaczeń rejestrowane w <em>Zakres zmian</em>.</li>
+            <li data-i18n="release.platforms">iOS: CocoaPods; Android: Android SDK.</li>
+          </ul>
+        </section>
+
+        <section id="environments">
+          <h2 data-i18n="env.heading">Środowiska</h2>
+          <ul>
+            <li data-i18n="env.dev">Dev: debug, bogate logi.</li>
+            <li data-i18n="env.prod">Prod: release, zredukowane logi.</li>
+          </ul>
+        </section>
+
+        <section id="configuration">
+          <h2 data-i18n="cfg.heading">Konfiguracja</h2>
+          <ul>
+            <li data-i18n="cfg.api"><code>config/api_config.dart</code> — domyślne godziny, endpointy.</li>
+            <li data-i18n="cfg.l10n"><code>l10n.yaml</code> — konfiguracja generatora lokalizacji.</li>
+          </ul>
+        </section>
+
+        <section id="ux-guidelines">
+          <h2 data-i18n="ux.heading">Wytyczne UX</h2>
+          <ul>
+            <li data-i18n="ux.clarity">Przejrzystość, kontrast, konsekwencja komponentów.</li>
+            <li data-i18n="ux.nav">Dolna nawigacja: spójne stany i brak „białego paska”.</li>
+          </ul>
+        </section>
+
+        <section id="l10n-guidelines">
+          <h2 data-i18n="l10n.heading">Wytyczne lokalizacji</h2>
+          <ul>
+            <li data-i18n="l10n.arb">Wszystkie teksty w <code>.arb</code>; użycie <code>AppLocalizations</code>.</li>
+            <li data-i18n="l10n.utils">Miesiące/dni: <code>date_utils.dart</code>; frakcje: <code>waste_type_utils.dart</code>.</li>
+          </ul>
+        </section>
+
+        <section id="notification-matrix">
+          <h2 data-i18n="nm.heading">Macierz powiadomień</h2>
+          <table class="table">
+            <thead>
+              <tr><th data-i18n="nm.platform">Platforma</th><th data-i18n="nm.mode">Tryb</th><th data-i18n="nm.perms">Uprawnienia</th><th data-i18n="nm.desc">Opis</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Android</td><td data-i18n="nm.exact">Dokładny</td><td>scheduleExactAlarm</td><td data-i18n="nm.exactDesc">Co do minuty (gdy system pozwala)</td></tr>
+              <tr><td>Android</td><td data-i18n="nm.approx">Przybliżony</td><td>notification</td><td data-i18n="nm.approxDesc">Tolerancja kilku minut</td></tr>
+              <tr><td>iOS</td><td data-i18n="nm.standard">Standard</td><td>alert/badge/sound</td><td data-i18n="nm.iosDesc">Natywne dialogi, logi diagnostyczne</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="api-reference">
+          <h2 data-i18n="api.heading">API Reference</h2>
+          <h3 data-i18n="api.schedule">Harmonogram</h3>
+          <table class="table">
+            <thead><tr><th data-i18n="api.endpoint">Endpoint</th><th data-i18n="api.method">Metoda</th><th data-i18n="api.params">Parametry</th><th data-i18n="api.response">Odpowiedź</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><code>/api/harmonogram</code> (przykład)</td>
+                <td>GET</td>
+                <td><code>prefix</code>, <code>propertyNumber</code></td>
+                <td>Lista pozycji: dzień, miesiąc (klucz), typ (PL), nazwa oryginalna</td>
+              </tr>
+            </tbody>
+          </table>
+          <p data-i18n="api.map">Mapowanie na <code>WasteType</code> w <code>ApiService</code> i <code>WasteTypeUtils</code>.</p>
+        </section>
+
+        <section id="data-models">
+          <h2 data-i18n="dm.heading">Modele danych (szczegóły)</h2>
+          <ul>
+            <li data-i18n="dm.wasteType"><strong>WasteType</strong>: <em>mixed, paper, glass, metal, bio, ash, bulky, green, elektro, opony</em>.</li>
+            <li data-i18n="dm.collection"><strong>WasteCollection</strong>: <em>day, month, dayOfWeek, wasteType, originalTypeName</em>.</li>
+            <li data-i18n="dm.address"><strong>Address</strong>: <em>prefix, propertyNumber, fullAddress</em>.</li>
+          </ul>
+        </section>
+
+        <section id="state-management">
+          <h2 data-i18n="state.heading">Zarządzanie stanem</h2>
+          <ul>
+            <li data-i18n="state.local"><code>StatefulWidget</code> + <code>setState</code> (prosty, przewidywalny model).</li>
+            <li data-i18n="state.prefs">Preferencje: <code>SettingsService</code> (SharedPreferences).</li>
+          </ul>
+        </section>
+
+        <section id="logging-monitoring">
+          <h2 data-i18n="log.heading">Logowanie/Monitoring</h2>
+          <ul>
+            <li data-i18n="log.notif">Logi debug w powiadomieniach: inicjalizacja, uprawnienia, planowanie.</li>
+            <li data-i18n="log.schedule">Logi w harmonogramie: rozmiary list, bieżący miesiąc, elementy krańcowe.</li>
+          </ul>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>Rozwiązywanie problemów</h2>
+          <ul>
+            <li><strong>iOS — CocoaPods</strong>: zainstaluj zgodnie z <a href="../INSTALL_COCOAPODS.md">INSTALL_COCOAPODS.md</a></li>
+            <li><strong>iOS — uprawnienia</strong>: natywne dialogi, brak własnych; sprawdź logi w <code>NotificationService</code></li>
+            <li><strong>Harmonogram pusty</strong>: sprawdź adres i filtr w <code>WasteScheduleScreen</code> (logi w debug)</li>
+          </ul>
+          <h3>FAQ (Najczęściej zadawane pytania)</h3>
+          <ul>
+            <li><strong>Nie widzę powiadomień</strong> — upewnij się, że w <em>Ustawieniach</em> aplikacji włączono powiadomienia oraz wybrano godzinę; na iOS sprawdź ustawienia systemowe.</li>
+            <li><strong>Nie mogę znaleźć adresu</strong> — spróbuj wpisać nazwę ulicy bez polskich znaków lub skorzystaj z historii ostatnich adresów.</li>
+            <li><strong>Inny język</strong> — przejdź do <em>Ustawienia → Język</em> i wybierz preferowany język.</li>
+          </ul>
+        </section>
+
+        <section id="limitations">
+          <h2>Znane ograniczenia</h2>
+          <ul>
+            <li>Brak publicznego API do imienin — funkcja imienin nie jest obecnie wbudowana.</li>
+            <li>Tryb przybliżony powiadomień na Androidzie może nie gwarantować co do minuty.</li>
+            <li>Niektóre komunikaty debug mogą pojawiać się w logach w trybie deweloperskim.</li>
+          </ul>
+        </section>
+
+        <section id="roadmap">
+          <h2>Roadmap</h2>
+          <ul>
+            <li>Dodanie galerii z rzeczywistymi zrzutami ekranów.</li>
+            <li>Konfigurowalne kanały powiadomień i granularne ustawienia.</li>
+            <li>Rozszerzenie tłumaczeń i pokrycia UI.</li>
+          </ul>
+        </section>
+
+        <section id="glossary">
+          <h2>Słowniczek</h2>
+          <ul>
+            <li><strong>Frakcja</strong> — typ odpadów (np. Papier, Szkło, Elektro).</li>
+            <li><strong>Harmonogram</strong> — lista terminów odbioru odpadów dla adresu.</li>
+            <li><strong>L10n</strong> — lokalizacja, tłumaczenia treści w aplikacji.</li>
+          </ul>
+        </section>
+
+        <section id="versioning">
+          <h2>Wersjonowanie</h2>
+          <ul>
+            <li><strong>Zmiany UI/UX</strong> — opisuj w <em>Zakres zmian</em> oraz w komentarzach commitów.</li>
+            <li><strong>Tłumaczenia</strong> — aktualizuj pliki <code>.arb</code> i wygenerowane klasy lokalizacji.</li>
+          </ul>
+        </section>
+
+        <section id="privacy">
+          <h2>Prywatność</h2>
+          <p>Aplikacja przechowuje lokalnie wybrane adresy i preferencje językowe oraz godzinę powiadomień. Dane te nie są wysyłane na serwer, poza zapytaniami o harmonogram i lokalizacje PSZOK wymaganymi do działania funkcji.</p>
+        </section>
+        </section>
+
+        <section id="changelog">
+          <h2>Zakres zmian (skrót)</h2>
+          <ul>
+            <li>Dodane języki i pełne tłumaczenia (w tym ukraiński)</li>
+            <li>Nowe frakcje: Zielone, Elektro, Opony + UI i instrukcje</li>
+            <li>Obraz dla Papieru, poprawki banerów i rozmiarów</li>
+            <li>Refaktor nawigacji dolnej (custom, kwadraty, dropdown z linkami)</li>
+            <li>Powiadomienia: poprawki iOS, logowanie, przycisk testowy</li>
+            <li>Naprawy routingu i filtrów harmonogramu</li>
+          </ul>
+        </section>
+
+        <section id="links">
+          <h2>Linki</h2>
+          <ul>
+            <li><a href="../README.md">README.md</a></li>
+            <li><a href="../TESTING_NOTIFICATIONS.md">TESTING_NOTIFICATIONS.md</a></li>
+            <li><a href="../INSTALL_COCOAPODS.md">INSTALL_COCOAPODS.md</a></li>
+            <li><a href="../API_INTEGRATION.md">API_INTEGRATION.md</a></li>
+          </ul>
+        </section>
+
+        <section id="support">
+          <h2>Wsparcie</h2>
+          <p>Masz pytania lub problem? Skontaktuj się z zespołem wsparcia KOMA lub zgłoś issue w repozytorium projektu.</p>
+          <ul>
+            <li>E-mail: support@koma.pl (przykładowy)</li>
+            <li>Godziny: Pon–Pt 8:00–16:00 (CET)</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+      <div class="footer-inner">© KOMA App — Dokumentacja</div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+

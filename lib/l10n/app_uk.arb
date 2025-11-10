@@ -1,0 +1,280 @@
+{
+  "@@locale": "uk",
+  
+  "appTitle": "Додаток KOMA",
+  "koma": "KOMA",
+  "komaServices": "KOMA КОМУНАЛЬНІ ПОСЛУГИ",
+  "back": "НАЗАД",
+  "returnButton": "НАЗАД",
+  "cancel": "Скасувати",
+  "ok": "OK",
+  "search": "Пошук",
+  "loading": "Завантаження...",
+  "error": "Помилка",
+  "noData": "Немає даних",
+  "tryAgain": "Спробуйте знову",
+  
+  "schedule": "Розклад",
+  "knowledgeBase": "База знань",
+  "shop": "Магазин KOMA",
+  "bokPortal": "BOK Портал",
+  "notifications": "Сповіщення",
+  "settings": "Налаштування",
+  "notificationsComingSoon": "Сповіщення - скоро доступні",
+  
+  "addressSearch": "Пошук адреси",
+  "searchAddress": "ШУКАТИ",
+  "address": "АДРЕСА",
+  "useLocation": "Використати локацію",
+  "gettingLocation": "Отримання локації...",
+  "locationError": "Помилка локації",
+  "gpsLocation": "GPS локація",
+  "coordinates": "Координати",
+  "selectSector": "Виберіть сектор",
+  "selectPrefix": "Виберіть префікс",
+  "selectLocality": "Виберіть населений пункт",
+  "selectCity": "Виберіть місто",
+  "selectStreet": "Виберіть вулицю",
+  "selectProperty": "Виберіть нерухомість",
+  "selectPropertyNumber": "Виберіть номер будинку",
+  "noProperties": "Немає нерухомості - перевірте журнали",
+  "showSchedule": "ПОКАЗАТИ РОЗКЛАД",
+  "loadingSectors": "Завантаження секторів...",
+  "loadingSectorsError": "Помилка завантаження секторів",
+  "selectSectorAndLocality": "Виберіть сектор та населений пункт",
+  "toFindSchedule": "Щоб знайти розклад, виберіть адресу зі списку нижче або використовуйте ручний пошук.",
+  
+  "favoriteLocations": "Улюблені локації",
+  "recentLocations": "Останні локації",
+  "recentSearches": "Останні пошуки",
+  "addedToFavorites": "Додано до улюблених",
+  "removedFromFavorites": "Видалено з улюблених",
+  "orSelectNewLocation": "Або виберіть нову локацію, використовуючи списки вище",
+  
+  "wasteSchedule": "Розклад відходів",
+  "wasteCollection": "Вивезення відходів",
+  "today": "Сьогодні",
+  "tomorrow": "Завтра",
+  "nextWeek": "Наступного тижня",
+  "wasteToday": "Відходи сьогодні",
+  "todayCollection": "Сьогодні вивозять: ",
+  "wasteType": "Тип відходів",
+  "collectionTime": "Час вивезення",
+  "container": "Контейнер",
+  "frequency": "Частота",
+  
+  "wasteDatabase": "База відходів",
+  "searchWaste": "ШУКАТИ",
+  "waste": "ВІДХОДИ",
+  "enterWasteName": "Введіть назву відходів",
+  "searching": "Пошук...",
+  "noResultsFor": "Немає відходів, що починаються з \"{query}\"",
+  "@noResultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "whereToThrow": "Куди викинути:",
+  "or": "або:",
+  "wasteGroup": "Група відходів:",
+  "searchAgain": "Шукати знову",
+  "checkWhereToThrow": "Перевірте, куди викинути",
+  "minThreeCharacters": "Введіть принаймні 3 символи для пошуку відходів",
+  
+  "howToSegregate": "ЯК СОРТУВАТИ?",
+  "segregationGuide": "Посібник із сортування",
+  "instructions": "Інструкції",
+  "whatCanBeThrown": "Що можна викинути",
+  "whatCannotBeThrown": "Що не можна викинути",
+  "preparation": "Підготовка",
+  "notes": "Примітки",
+  "attention": "Увага:",
+  "doNotThrow": "Не викидайте:",
+  
+  "mixed": "Змішані",
+  "paper": "Папір",
+  "glass": "Скло",
+  "plastic": "Метали та пластик",
+  "bio": "Біо",
+  "ash": "Попіл",
+  "bulky": "Габаритні",
+  "green": "Зелені відходи",
+  
+  "newspapersAndMagazines": "• Газети та журнали",
+  "cardboardAndPaperboard": "• Картон",
+  "officePaper": "• Офісний папір",
+  "booksWithoutCovers": "• Книги (без обкладинок)",
+  "dirtyPaper": "• Забрудненого паперу",
+  "wallpaper": "• Шпалер",
+  "waxedPaper": "• Вощеного паперу",
+  "glassBottles": "• Скляні пляшки",
+  "glassJars": "• Скляні банки",
+  "glassPackaging": "• Скляна упаковка",
+  "windowGlass": "• Віконного скла",
+  "mirrors": "• Дзеркал",
+  "porcelain": "• Порцеляни",
+  "aluminumCans": "• Алюмінієві банки",
+  "steelCans": "• Сталеві банки",
+  "plasticPackaging": "• Пластикова упаковка",
+  "drinkCartons": "• Картонні пакети з напоями",
+  "batteries": "• Батарейок",
+  "electronics": "• Електроніки",
+  "foodScraps": "• Харчові залишки",
+  "eggShells": "• Яєчна шкаралупа",
+  "coffeeAndTeaGrounds": "• Кавова та чайна гуща",
+  "vegetableAndFruitPeels": "• Очистки овочів та фруктів",
+  "meatAndFish": "• М'яса та риби",
+  "bones": "• Кісток",
+  "oil": "• Олії",
+  "furnaceAsh": "• Попіл із печей",
+  "fireplaceAsh": "• Попіл із камінів",
+  "slag": "• Шлак",
+  "cigaretteAsh": "• Попіл від сигарет",
+  "otherWaste": "• Інших відходів",
+  "furniture": "• Меблі",
+  "appliances": "• Побутова техніка",
+  "bicycles": "• Велосипеди",
+  "mattresses": "• Матраци",
+  "callForCollection": "• Замовте вивезення телефоном",
+  "placeInFront": "• Виставте перед будинком",
+  
+  "grassClippings": "• Скошена трава",
+  "leaves": "• Листя",
+  "branches": "• Гілки",
+  "hedgeTrimmings": "• Обрізані живоплоти",
+  "plantWaste": "• Рослинні відходи",
+  "doNotThrowGreen": "• Не викидайте:",
+  "soilAndStones": "• Земля та каміння",
+  "foodWaste": "• Харчові відходи",
+  
+  "nonRecyclableWaste": "• Відходи, що не підлягають переробці",
+  "dirtyPackaging": "• Забруднена упаковка",
+  "hygienicWaste": "• Гігієнічні відходи",
+  "hazardousWaste": "• Небезпечних відходів",
+  
+  "reminder": "Нагадування",
+  "notificationTime": "Час сповіщень",
+  "locationAccess": "Доступ до локації",
+  "language": "Мова",
+  "appVersion": "Версія додатку",
+  "copyright": "Copyright",
+  "testNotifications": "Тест сповіщень",
+  "test": "Тест",
+  "check": "Перевірити",
+  "scheduledNotifications": "Заплановані сповіщення",
+  "testNotificationSent": "Тестове сповіщення надіслано",
+  "enabled": "Увімкнено",
+  "disabled": "Вимкнено",
+  "polish": "Польська",
+  "english": "Англійська",
+  
+  "wasteReminder": "Нагадування про відходи",
+  "checkWasteScheduleToday": "Перевірте розклад вивезення відходів на сьогодні",
+  
+  "permissionsRequired": "Потрібні дозволи",
+  "permissionMessage": "Щоб використовувати цю функцію, потрібно надати дозволи на {permissionType} в налаштуваннях додатку.",
+  "@permissionMessage": {
+    "placeholders": {
+      "permissionType": {
+        "type": "String"
+      }
+    }
+  },
+  "openSettings": "Відкрити налаштування",
+  
+  "monday": "Понеділок",
+  "tuesday": "Вівторок",
+  "wednesday": "Середа",
+  "thursday": "Четвер",
+  "friday": "П'ятниця",
+  "saturday": "Субота",
+  "sunday": "Неділя",
+  
+  "january": "Січень",
+  "february": "Лютий",
+  "march": "Березень",
+  "april": "Квітень",
+  "may": "Травень",
+  "june": "Червень",
+  "july": "Липень",
+  "august": "Серпень",
+  "september": "Вересень",
+  "october": "Жовтень",
+  "november": "Листопад",
+  "december": "Грудень",
+  
+  "noInternetConnection": "Немає підключення до інтернету. Перевірте підключення та спробуйте знову.",
+  "serverError": "Помилка сервера. Спробуйте пізніше.",
+  "unknownError": "Неочікувана помилка",
+  "loadingError": "Помилка завантаження даних",
+  "tryAgainLater": "Спробуйте пізніше",
+  "timeoutError": "Перевищено час очікування. Перевірте інтернет-з'єднання.",
+  "requestCancelled": "Запит було скасовано.",
+  "scheduleNotFound": "Не знайдено розклад для цієї адреси.",
+  "fieldCannotBeEmpty": "{fieldName} не може бути порожнім",
+  "@fieldCannotBeEmpty": {
+    "placeholders": {
+      "fieldName": {
+        "type": "String"
+      }
+    }
+  },
+  "fieldTooLong": "{fieldName} занадто довгий (макс. {maxLength} символів)",
+  "@fieldTooLong": {
+    "placeholders": {
+      "fieldName": {
+        "type": "String"
+      },
+      "maxLength": {
+        "type": "int"
+      }
+    }
+  },
+  "errorLoadingSchedule": "Помилка завантаження розкладу",
+  "errorLoadingSectors": "Помилка завантаження секторів",
+  "errorLoadingStreets": "Помилка завантаження вулиць",
+  "errorLoadingProperties": "Помилка завантаження нерухомості",
+  "errorLoadingDetails": "Помилка завантаження деталей",
+  "errorSearchingWaste": "Помилка пошуку відходів",
+  "serverErrorCode": "Помилка сервера: {code}",
+  "@serverErrorCode": {
+    "placeholders": {
+      "code": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "scheduleTooltip": "Розклад",
+  "knowledgeBaseTooltip": "База знань",
+  "shopTooltip": "Магазин KOMA",
+  "bokTooltip": "BOK Портал",
+  "notificationsTooltip": "Сповіщення",
+  "settingsTooltip": "Налаштування",
+  "disposalLocations": "Пункти утилізації",
+  "searchLocationPlaceholder": "Пошук локації...",
+  "all": "Усі",
+  "loadingLocationsError": "Помилка завантаження локацій",
+  "noLocations": "Немає локацій",
+  "noLocationsForFilters": "Не знайдено локацій за обраними фільтрами",
+  "map": "Карта",
+  "call": "Зателефонувати",
+  "delete": "Видалити",
+  "addressChangedTo": "Адресу змінено на",
+  "externalLinks": "Зовнішні посилання",
+  
+  "pageNotFound": "Не знайдено сторінку: {routeName}",
+  "@pageNotFound": {
+    "placeholders": {
+      "routeName": {
+        "type": "String"
+      }
+    }
+  },
+  "returnToMain": "Повернутися на головну",
+  "appSubtitle": "Управління відходами",
+  "loading": "Завантаження..."
+}
+
