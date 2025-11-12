@@ -149,68 +149,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ),
-          
-          // Test powiadomień
-          _buildSettingRow(
-            icon: Icons.notifications_active,
-            title: AppLocalizations.of(context)!.testNotifications,
-            control: ElevatedButton(
-              onPressed: () async {
-                try {
-                  await NotificationService.sendTestNotification();
-                  if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(AppLocalizations.of(context)!.testNotificationSent),
-                        backgroundColor: Colors.green,
-                      ),
-                    );
-                  }
-                } catch (e) {
-                  if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('${AppLocalizations.of(context)!.error}: $e'),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
-                  }
-                }
-              },
-              child: Text(AppLocalizations.of(context)!.test),
-            ),
-          ),
-          
-          // Sprawdź zaplanowane powiadomienia
-          _buildSettingRow(
-            icon: Icons.schedule,
-            title: AppLocalizations.of(context)!.scheduledNotifications,
-            control: ElevatedButton(
-              onPressed: () async {
-                try {
-                  final pending = await NotificationService.getPendingNotifications();
-                  if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('${AppLocalizations.of(context)!.scheduledNotifications}: ${pending.length}'),
-                        backgroundColor: Colors.blue,
-                      ),
-                    );
-                  }
-                } catch (e) {
-                  if (mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('${AppLocalizations.of(context)!.error}: $e'),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
-                  }
-                }
-              },
-              child: Text(AppLocalizations.of(context)!.check),
-            ),
-          ),
         ],
 
         // Dostęp do lokalizacji
