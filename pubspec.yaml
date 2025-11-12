@@ -1,4 +1,4 @@
-name: koma_app
+name: koma_shedules
 description: "Aplikacja mobilna KOMA - harmonogramy odbioru odpadów i baza wiedzy"
 publish_to: 'none'
 version: 0.1.0+1
