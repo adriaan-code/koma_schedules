@@ -190,7 +190,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           icon: Icons.info_outline,
           title: AppLocalizations.of(context)!.appVersion,
           control: const Text(
-            '1.0.0',
+            '1.0.1',
             style: TextStyle(
               color: AppTheme.grey600,
               fontWeight: FontWeight.w500,
