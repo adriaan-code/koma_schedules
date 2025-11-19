@@ -24,6 +24,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>WonderPushClientId</key>
+	<string>2f40d2d209dc4e9e9057aa1d35563397f560eb06/string>
+	<key>WonderPushClientSecret</key>
+	<string>a1ca023fe2760cac862954f708ff30570b142fbec3840a84db46cd5cabad6f5e</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

@@ -12,6 +12,7 @@ import 'models/waste_collection.dart';
 import 'services/notification_service.dart';
 import 'services/settings_service.dart';
 import 'services/connectivity_service.dart';
+import 'services/wonderpush_service.dart';
 import 'config/app_theme.dart';
 
 void main() async {
@@ -29,6 +30,13 @@ void main() async {
     await NotificationService.initialize();
   } catch (e) {
     debugPrint('Błąd inicjalizacji powiadomień: $e');
+  }
+
+  // Przygotuj WonderPush (powiadomienia push)
+  try {
+    await WonderPushService.initialize();
+  } catch (e) {
+    debugPrint('Błąd inicjalizacji WonderPush: $e');
   }
 
   // Inicjalizuj monitoring połączenia

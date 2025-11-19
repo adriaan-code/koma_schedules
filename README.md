@@ -41,7 +41,16 @@ flutter run
 - **[API_INTEGRATION.md](API_INTEGRATION.md)** - Dokumentacja integracji z API KOMA
 - **[TESTING_NOTIFICATIONS.md](TESTING_NOTIFICATIONS.md)** - Jak testować powiadomienia
 - **[INSTALL_COCOAPODS.md](INSTALL_COCOAPODS.md)** - Instalacja CocoaPods dla iOS
+- **[WONDERPUSH_SETUP.md](WONDERPUSH_SETUP.md)** - Konfiguracja zdalnych pushy (WonderPush)
 - **[OPTIMIZATION_REPORT.md](OPTIMIZATION_REPORT.md)** - Raport optymalizacji
+
+## 🔔 Konfiguracja WonderPush (skrót)
+
+1. Uzyskaj `Client ID`, `Client Secret` oraz `Firebase Sender ID` w panelu WonderPush.
+2. Uzupełnij `android/local.properties` (`wonderpush.clientId`, `wonderpush.clientSecret`, `wonderpush.senderId`).
+3. W `ios/Runner/Info.plist` wpisz własne `WonderPushClientId` oraz `WonderPushClientSecret`, a w `Runner.entitlements` ustaw poprawne `aps-environment`.
+4. Uruchom `flutter pub get` i (na iOS) `cd ios && pod install`.
+5. Zbuduj aplikację i przetestuj wysyłkę powiadomień z dashboardu WonderPush.
 
 ## 🔧 Budowanie
 

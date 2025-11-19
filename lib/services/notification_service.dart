@@ -7,6 +7,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '../models/address.dart';
 import 'api_service.dart';
 import 'settings_service.dart';
+import 'wonderpush_service.dart';
 
 class NotificationService {
   static final FlutterLocalNotificationsPlugin _notifications =
@@ -368,8 +369,10 @@ class NotificationService {
   /// Sprawdza i aktualizuje powiadomienia na podstawie ustawień
   static Future<void> updateNotifications() async {
     if (await areNotificationsEnabled()) {
+      await WonderPushService.subscribe();
       await scheduleDailyWasteNotification();
     } else {
+      await WonderPushService.unsubscribe();
       await cancelAllNotifications();
     }
   }

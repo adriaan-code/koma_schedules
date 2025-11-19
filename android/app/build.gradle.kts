@@ -1,9 +1,23 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
+
+val localProperties = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) {
+        file.inputStream().use { load(it) }
+    }
+}
+
+fun getWonderPushProperty(key: String, fallback: String): String =
+    localProperties.getProperty(key)?.takeIf { it.isNotBlank() } ?: fallback
+
+fun String.toBuildConfigString(): String = "\"${this.replace("\"", "\\\"")}\""
 
 android {
     namespace = "com.example.koma_app"
@@ -29,6 +43,25 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        val wonderPushClientId =
+            getWonderPushProperty("wonderpush.clientId", "YOUR_WONDERPUSH_CLIENT_ID")
+        val wonderPushClientSecret =
+            getWonderPushProperty("wonderpush.clientSecret", "YOUR_WONDERPUSH_CLIENT_SECRET")
+        val wonderPushSenderId =
+            getWonderPushProperty("wonderpush.senderId", "YOUR_FIREBASE_SENDER_ID")
+
+        buildConfigField("String", "WONDERPUSH_CLIENT_ID", wonderPushClientId.toBuildConfigString())
+        buildConfigField(
+            "String",
+            "WONDERPUSH_CLIENT_SECRET",
+            wonderPushClientSecret.toBuildConfigString(),
+        )
+        buildConfigField(
+            "String",
+            "WONDERPUSH_SENDER_ID",
+            wonderPushSenderId.toBuildConfigString(),
+        )
     }
 
     buildTypes {
