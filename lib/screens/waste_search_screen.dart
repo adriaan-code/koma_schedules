@@ -489,13 +489,14 @@ class _WasteDetailsCard extends StatelessWidget {
         children: [
           // Nazwa wyszukiwanego odpadu nad całym boxem
           Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
+            padding: const EdgeInsets.only(bottom: 12.0),
             child: Text(
               waste.waste_name,
               style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
                 color: AppTheme.textPrimary,
+                letterSpacing: 0.5,
               ),
             ),
           ),
@@ -529,10 +530,11 @@ class _WasteDetailsCard extends StatelessWidget {
                     child: Text(
                       waste.waste_group.toUpperCase(),
                       style: TextStyle(
-                        fontSize: waste.containerWasteType == WasteType.metal ? 28 : 36,
-                        height: 1,
-                        fontWeight: FontWeight.w900,
+                        fontSize: waste.containerWasteType == WasteType.metal ? 24 : 28,
+                        height: 1.2,
+                        fontWeight: FontWeight.w700,
                         color: AppTheme.backgroundWhite,
+                        letterSpacing: 1.0,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -552,10 +554,10 @@ class _WasteDetailsCard extends StatelessWidget {
                   child: Text(
                     waste.main_container.toUpperCase(),
                     style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
-                      fontStyle: FontStyle.italic,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
                       color: waste.containerColor,
+                      letterSpacing: 0.5,
                     ),
                   ),
                 ),
@@ -599,146 +601,91 @@ class _WasteDetailsCard extends StatelessWidget {
       case WasteType.paper:
         return Center(
           child: Image.asset(
-            'assets/img/paper_wastes.png',
+            'assets/img/papier.png',
             width: 120,
             height: 120,
             fit: BoxFit.contain,
           ),
         );
       case WasteType.glass:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.local_drink, size: 40, color: Color.fromRGBO(70, 180, 11, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.wine_bar, size: 30, color: Color.fromRGBO(70, 180, 11, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/szkło.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.metal:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.build, size: 40, color: Color.fromRGBO(128, 128, 128, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.inventory, size: 30, color: Color.fromRGBO(96, 96, 96, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/metale i tworzywa sztuczne.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.bio:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.eco, size: 40, color: Color.fromRGBO(162, 118, 78, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.agriculture, size: 30, color: Color.fromRGBO(162, 118, 78, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/bio.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.ash:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.whatshot, size: 40, color: Color.fromRGBO(128, 128, 128, 1)),
-                SizedBox(height: 8),
-                Icon(
-                  Icons.local_fire_department,
-                  size: 30,
-                  color: Color.fromRGBO(96, 96, 96, 1),
-                ),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/popiol.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.bulky:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.chair, size: 40, color: Color.fromRGBO(128, 0, 128, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.weekend, size: 30, color: Color.fromRGBO(128, 0, 128, 1)),
-                SizedBox(height: 4),
-                Icon(Icons.tv, size: 24, color: Color.fromRGBO(128, 0, 128, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/gabaryty.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.elektro:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.devices_other, size: 40, color: Color.fromRGBO(0, 100, 200, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.cable, size: 30, color: Color.fromRGBO(0, 100, 200, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/elektro.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.opony:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.car_repair, size: 40, color: Color.fromRGBO(139, 69, 19, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.circle, size: 30, color: Color.fromRGBO(139, 69, 19, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/opony.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.mixed:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.delete, size: 40, color: Color.fromRGBO(128, 128, 128, 1)),
-                SizedBox(height: 8),
-                Icon(
-                  Icons.restore_from_trash,
-                  size: 30,
-                  color: Color.fromRGBO(96, 96, 96, 1),
-                ),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/zmieszane.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
       case WasteType.green:
-        return const ColoredBox(
-          color: AppTheme.backgroundGreyMedium,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.park, size: 40, color: Color.fromRGBO(34, 139, 34, 1)),
-                SizedBox(height: 8),
-                Icon(Icons.grass, size: 30, color: Color.fromRGBO(34, 139, 34, 1)),
-              ],
-            ),
+        return Center(
+          child: Image.asset(
+            'assets/img/choinki.png',
+            width: 120,
+            height: 120,
+            fit: BoxFit.contain,
           ),
         );
     }
@@ -777,10 +724,10 @@ class _SearchAgainButton extends StatelessWidget {
             child: Text(
               l10n.searchAgain.toUpperCase(),
               style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w900,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
                 color: Colors.white,
-                letterSpacing: 1.2,
+                letterSpacing: 1.0,
               ),
             ),
           ),

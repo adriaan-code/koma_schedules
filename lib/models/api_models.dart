@@ -92,11 +92,65 @@ class ApiWasteSearchResult {
     }
   }
 
-  /// Mapuje main_container na WasteType dla kolorów
-  /// Jeśli main_container nie pasuje do żadnego wzorca, używa wasteType (waste_group)
+  /// Mapuje main_container na WasteType dla kolorów i obrazków
+  /// Łączy waste_group z main_container - waste_group ma priorytet, ale main_container może go nadpisać
+  /// dla specjalnych przypadków (elektroodpady, PSZOK, itp.)
   WasteType get containerWasteType {
+    final group = waste_group.toLowerCase().trim();
     final container = main_container.toLowerCase().trim();
     
+    // Specjalne miejsca zbiórki - zawsze mają priorytet niezależnie od waste_group
+    if (container.contains('punkt zbiórki elektroodpadów') || 
+        container.contains('punkt zbiorki elektroodpadow') ||
+        container.contains('elektroodpad')) {
+      return WasteType.elektro;
+    }
+    
+    if (container.contains('pojemnik na baterie') || 
+        container.contains('baterie i akumulatory')) {
+      return WasteType.elektro; // Baterie są częścią elektroodpadów
+    }
+    
+    // PSZOK - używa waste_group, bo przyjmuje różne odpady
+    if (container.contains('pszok')) {
+      return wasteType;
+    }
+    
+    // Jeśli waste_group jest konkretny typ (nie "zmieszane" ani "inne"),
+    // użyj go jako podstawy
+    if (group.isNotEmpty && 
+        group != 'zmieszane' && 
+        group != 'mixed' && 
+        group != 'inne' &&
+        group != 'other') {
+      // Sprawdź czy main_container potwierdza waste_group przez kolor pojemnika
+      // Jeśli tak, użyj waste_group
+      if (group == 'papier' || group == 'paper') {
+        if (container.contains('pojemnik niebieski') || container.isEmpty) {
+          return WasteType.paper;
+        }
+      }
+      if (group == 'szkło' || group == 'glass') {
+        if (container.contains('pojemnik zielony') || container.isEmpty) {
+          return WasteType.glass;
+        }
+      }
+      if (group == 'metale i tworzywa sztuczne' || group == 'metal') {
+        if (container.contains('pojemnik żółty') || container.contains('pojemnik zolty') || container.isEmpty) {
+          return WasteType.metal;
+        }
+      }
+      if (group == 'bio' || group == 'biodegradowalne') {
+        if (container.contains('pojemnik brązowy') || container.contains('pojemnik brazowy') || container.isEmpty) {
+          return WasteType.bio;
+        }
+      }
+      
+      // Dla pozostałych konkretnych typów zawsze używaj waste_group
+      return wasteType;
+    }
+    
+    // Jeśli waste_group jest "zmieszane" lub "inne", sprawdź main_container
     // Pojemniki kolorowe - bezpośrednie mapowanie
     if (container.contains('pojemnik żółty') || container.contains('pojemnik zolty')) {
       return WasteType.metal; // Żółty = metale i tworzywa sztuczne
@@ -116,25 +170,6 @@ class ApiWasteSearchResult {
     
     if (container.contains('pojemnik zielony')) {
       return WasteType.green; // Zielony = odpady zielone
-    }
-    
-    // Specjalne miejsca zbiórki
-    if (container.contains('punkt zbiórki elektroodpadów') || 
-        container.contains('punkt zbiorki elektroodpadow') ||
-        container.contains('elektroodpad')) {
-      return WasteType.elektro;
-    }
-    
-    if (container.contains('pojemnik na baterie') || 
-        container.contains('baterie i akumulatory')) {
-      return WasteType.elektro; // Baterie są częścią elektroodpadów
-    }
-    
-    // PSZOK i inne specjalne miejsca - używamy waste_group jako fallback
-    // Ale możemy też użyć domyślnego koloru dla PSZOK
-    if (container.contains('pszok')) {
-      // PSZOK przyjmuje różne odpady, więc używamy waste_group
-      return wasteType;
     }
     
     if (container.contains('apteka')) {
