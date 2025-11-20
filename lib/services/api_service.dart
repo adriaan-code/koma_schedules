@@ -410,6 +410,97 @@ class ApiService {
     }
   }
 
+  /// Pobiera wszystkie unikalne wartości main_container z API
+  Future<List<String>> getAllMainContainers() async {
+    try {
+      if (kDebugMode) {
+        debugPrint('Pobieranie wszystkich pojemników z API...');
+        debugPrint(
+          'URL: ${ApiConfig.wpJsonBaseUrl}${ApiConfig.wasteSearchEndpoint}',
+        );
+      }
+
+      // Pobierz wszystkie odpady bez parametru zapytania
+      final response = await _dio.get<Map<String, dynamic>>(
+        '${ApiConfig.wpJsonBaseUrl}${ApiConfig.wasteSearchEndpoint}',
+      );
+
+      if (response.statusCode == 200) {
+        final Set<String> containers = {};
+
+        // API zwraca obiekt z 'count' i 'data' array
+        if (response.data is Map<String, dynamic>) {
+          final responseData = response.data as Map<String, dynamic>;
+          final count = responseData['count'] as int?;
+          final dataList = responseData['data'] as List<dynamic>?;
+
+          if (kDebugMode) {
+            debugPrint('API zwróciło $count wyników');
+          }
+
+          if (dataList != null) {
+            for (final wasteData in dataList) {
+              if (wasteData is Map<String, dynamic>) {
+                try {
+                  final mainContainer = wasteData['main_container'] as String?;
+                  if (mainContainer != null && mainContainer.isNotEmpty) {
+                    containers.add(mainContainer);
+                  }
+                } catch (e) {
+                  if (kDebugMode) {
+                    debugPrint('Błąd parsowania elementu: $e');
+                  }
+                }
+              }
+            }
+          }
+        } else if (response.data is List) {
+          // Fallback dla przypadku gdy API zwraca bezpośrednio array
+          final dataList = response.data as List<dynamic>;
+          for (final wasteData in dataList) {
+            if (wasteData is Map<String, dynamic>) {
+              try {
+                final mainContainer = wasteData['main_container'] as String?;
+                if (mainContainer != null && mainContainer.isNotEmpty) {
+                  containers.add(mainContainer);
+                }
+              } catch (e) {
+                if (kDebugMode) {
+                  debugPrint('Błąd parsowania elementu: $e');
+                }
+              }
+            }
+          }
+        }
+
+        final sortedContainers = containers.toList()..sort();
+        
+        if (kDebugMode) {
+          debugPrint('Znaleziono ${sortedContainers.length} unikalnych pojemników:');
+          for (final container in sortedContainers) {
+            debugPrint('  - $container');
+          }
+        }
+
+        return sortedContainers;
+      } else {
+        throw Exception('Błąd pobierania pojemników: ${response.statusCode}');
+      }
+    } on DioException catch (e) {
+      if (kDebugMode) {
+        debugPrint('DioException w getAllMainContainers: ${e.type}');
+        debugPrint('Message: ${e.message}');
+        debugPrint('Response: ${e.response?.data}');
+      }
+      throw _handleDioError(e);
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('Ogólny błąd w getAllMainContainers: $e');
+      }
+      throw Exception('Nieoczekiwany błąd: $e');
+    }
+  }
+
   /// Konwertuje dane z API na modele aplikacji
   List<WasteCollection> _convertApiCollectionsToWasteCollections(
     List<ApiWasteCollection> apiCollections,

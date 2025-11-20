@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'waste_type.dart';
 
 /// Model dla wyszukiwania odpadów
@@ -90,6 +91,68 @@ class ApiWasteSearchResult {
         return WasteType.mixed;
     }
   }
+
+  /// Mapuje main_container na WasteType dla kolorów
+  /// Jeśli main_container nie pasuje do żadnego wzorca, używa wasteType (waste_group)
+  WasteType get containerWasteType {
+    final container = main_container.toLowerCase().trim();
+    
+    // Pojemniki kolorowe - bezpośrednie mapowanie
+    if (container.contains('pojemnik żółty') || container.contains('pojemnik zolty')) {
+      return WasteType.metal; // Żółty = metale i tworzywa sztuczne
+    }
+    
+    if (container.contains('pojemnik brązowy') || container.contains('pojemnik brazowy')) {
+      return WasteType.bio; // Brązowy = bioodpady
+    }
+    
+    if (container.contains('pojemnik czarny')) {
+      return WasteType.mixed; // Czarny = zmieszane
+    }
+    
+    if (container.contains('pojemnik niebieski')) {
+      return WasteType.paper; // Niebieski = papier
+    }
+    
+    if (container.contains('pojemnik zielony')) {
+      return WasteType.green; // Zielony = odpady zielone
+    }
+    
+    // Specjalne miejsca zbiórki
+    if (container.contains('punkt zbiórki elektroodpadów') || 
+        container.contains('punkt zbiorki elektroodpadow') ||
+        container.contains('elektroodpad')) {
+      return WasteType.elektro;
+    }
+    
+    if (container.contains('pojemnik na baterie') || 
+        container.contains('baterie i akumulatory')) {
+      return WasteType.elektro; // Baterie są częścią elektroodpadów
+    }
+    
+    // PSZOK i inne specjalne miejsca - używamy waste_group jako fallback
+    // Ale możemy też użyć domyślnego koloru dla PSZOK
+    if (container.contains('pszok')) {
+      // PSZOK przyjmuje różne odpady, więc używamy waste_group
+      return wasteType;
+    }
+    
+    if (container.contains('apteka')) {
+      // Odpady medyczne - możemy użyć specjalnego koloru lub mixed
+      return WasteType.mixed;
+    }
+    
+    if (container.contains('firma specjalistyczna')) {
+      // Odpady specjalne (np. azbest) - możemy użyć specjalnego koloru
+      return WasteType.mixed;
+    }
+    
+    // Jeśli nie znaleziono dopasowania, użyj wasteType (waste_group)
+    return wasteType;
+  }
+  
+  /// Zwraca kolor na podstawie main_container (lub waste_group jako fallback)
+  Color get containerColor => containerWasteType.color;
 }
 
 @immutable

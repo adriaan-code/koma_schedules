@@ -6,12 +6,16 @@ import '../models/address.dart';
 import '../models/api_models.dart';
 import '../services/api_service.dart';
 import '../services/location_history_service.dart';
-import '../services/location_service.dart';
 import '../widgets/koma_header.dart';
 
 class AddressSearchScreen extends StatefulWidget {
-  const AddressSearchScreen({super.key, this.onLanguageChanged});
+  const AddressSearchScreen({
+    super.key,
+    this.onLanguageChanged,
+    this.returnAddress = false,
+  });
   final void Function(String)? onLanguageChanged;
+  final bool returnAddress; // Jeśli true, zwraca Address zamiast nawigować
 
   @override
   State<AddressSearchScreen> createState() => _AddressSearchScreenState();
@@ -44,7 +48,6 @@ class _AddressSearchScreenState extends State<AddressSearchScreen> {
   String? _errorMessage;
   List<Address> _recentLocations = [];
   List<Address> _favoriteLocations = [];
-  bool _isLoadingLocation = false;
   bool _isLoadingStreets = false;
   bool _isLoadingProperties = false;
 
@@ -94,92 +97,6 @@ class _AddressSearchScreenState extends State<AddressSearchScreen> {
     }
   }
 
-  /// Pobiera lokalizację GPS i próbuje znaleźć adres
-  Future<void> _useCurrentLocation() async {
-    if (mounted) {
-      setState(() {
-        _isLoadingLocation = true;
-      });
-    }
-
-    try {
-      final position = await LocationService.getCurrentPosition();
-
-      if (position == null) {
-        _showLocationError(
-          'Nie udało się pobrać lokalizacji GPS. Sprawdź uprawnienia i czy GPS jest włączony.',
-        );
-        return;
-      }
-
-      // Tutaj można dodać logikę do wyszukiwania adresu na podstawie współrzędnych
-      // Na razie pokażemy współrzędne i pozwolimy użytkownikowi wybrać ręcznie
-      _showLocationDialog(position.latitude, position.longitude);
-    } catch (e) {
-      _showLocationError('Błąd pobierania lokalizacji: $e');
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isLoadingLocation = false;
-        });
-      }
-    }
-  }
-
-  /// Pokazuje dialog z lokalizacją GPS
-  void _showLocationDialog(double latitude, double longitude) {
-    showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(AppLocalizations.of(context)!.gpsLocation),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${AppLocalizations.of(context)!.coordinates}: ${LocationService.formatCoordinates(latitude, longitude)}',
-              ),
-              const SizedBox(height: 16),
-              Text(AppLocalizations.of(context)!.toFindSchedule),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text(AppLocalizations.of(context)!.ok),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  /// Pokazuje błąd lokalizacji
-  void _showLocationError(String message) {
-    showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(AppLocalizations.of(context)!.locationError),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text(AppLocalizations.of(context)!.ok),
-            ),
-            TextButton(
-              onPressed: () async {
-                Navigator.of(context).pop();
-                await LocationService.openAppSettings();
-              },
-              child: Text(AppLocalizations.of(context)!.openSettings),
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   Future<void> _loadSectors() async {
     if (kDebugMode) {
@@ -408,57 +325,6 @@ class _AddressSearchScreenState extends State<AddressSearchScreen> {
               ),
             ),
             const SizedBox(height: 16),
-
-            // (Quick text search temporarily removed)
-
-            // Przycisk "Użyj lokalizacji"
-            Center(
-              child: Semantics(
-                button: true,
-                label: _isLoadingLocation
-                    ? AppLocalizations.of(context)!.gettingLocation
-                    : AppLocalizations.of(context)!.useLocation,
-                hint: 'Użyj GPS aby znaleźć najbliższy adres',
-                child: TextButton(
-                  onPressed: _isLoadingLocation ? null : _useCurrentLocation,
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      _isLoadingLocation
-                          ? const SizedBox(
-                              width: 16,
-                              height: 16,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            )
-                          : const Icon(
-                              Icons.near_me,
-                              color: AppTheme.textBlack,
-                              size: 20,
-                            ),
-                      const SizedBox(width: 8),
-                      Text(
-                        _isLoadingLocation
-                            ? AppLocalizations.of(context)!.gettingLocation
-                            : AppLocalizations.of(context)!.useLocation,
-                        style: const TextStyle(
-                          color: AppTheme.textBlack,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
 
             // Lista rozwijana sektorów
             Center(
@@ -989,12 +855,17 @@ class _AddressSearchScreenState extends State<AddressSearchScreen> {
                       // Sprawdź czy widget jest jeszcze zamontowany
                       if (!mounted) return;
 
-                      // Przejdź do ekranu harmonogramu
-                      Navigator.pushNamed(
-                        context,
-                        '/waste-schedule',
-                        arguments: fullAddress,
-                      );
+                      // Jeśli returnAddress jest true, zwróć adres zamiast nawigować
+                      if (widget.returnAddress) {
+                        Navigator.of(context).pop(fullAddress);
+                      } else {
+                        // Przejdź do ekranu harmonogramu
+                        Navigator.pushNamed(
+                          context,
+                          '/waste-schedule',
+                          arguments: fullAddress,
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.textPrimary,
@@ -1134,8 +1005,13 @@ class _AddressSearchScreenState extends State<AddressSearchScreen> {
           // Sprawdź czy widget jest jeszcze zamontowany
           if (!mounted) return;
 
-          // Przejdź do harmonogramu
-          Navigator.pushNamed(context, '/waste-schedule', arguments: location);
+          // Jeśli returnAddress jest true, zwróć adres zamiast nawigować
+          if (widget.returnAddress) {
+            Navigator.of(context).pop(location);
+          } else {
+            // Przejdź do harmonogramu
+            Navigator.pushNamed(context, '/waste-schedule', arguments: location);
+          }
         },
         onLongPress: () => _toggleFavorite(location, isFavorite),
         child: Container(

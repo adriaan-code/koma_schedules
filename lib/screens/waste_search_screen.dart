@@ -504,15 +504,15 @@ class _WasteDetailsCard extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 border: Border(
-                  left: BorderSide(color: waste.wasteType.color, width: 4),
-                  right: BorderSide(color: waste.wasteType.color, width: 4),
+                  left: BorderSide(color: waste.containerColor, width: 4),
+                  right: BorderSide(color: waste.containerColor, width: 4),
                 ),
               ),
           child: Column(
             children: [
               // Kolorowy banner z nazwą odpadu (jak w waste_details_screen)
               Container(
-                margin: waste.wasteType == WasteType.metal
+                margin: waste.containerWasteType == WasteType.metal
                     ? const EdgeInsets.symmetric(horizontal: 8.0)
                     : EdgeInsets.zero,
                 child: Center(
@@ -524,12 +524,12 @@ class _WasteDetailsCard extends StatelessWidget {
                       bottom: 1.0,
                     ),
                     decoration: BoxDecoration(
-                      color: waste.wasteType.color,
+                      color: waste.containerColor,
                     ),
                     child: Text(
                       waste.waste_group.toUpperCase(),
                       style: TextStyle(
-                        fontSize: waste.wasteType == WasteType.metal ? 28 : 36,
+                        fontSize: waste.containerWasteType == WasteType.metal ? 28 : 36,
                         height: 1,
                         fontWeight: FontWeight.w900,
                         color: AppTheme.backgroundWhite,
@@ -555,7 +555,7 @@ class _WasteDetailsCard extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.w300,
                       fontStyle: FontStyle.italic,
-                      color: waste.wasteType.color,
+                      color: waste.containerColor,
                     ),
                   ),
                 ),
@@ -566,7 +566,7 @@ class _WasteDetailsCard extends StatelessWidget {
                 width: double.infinity,
                 height: 120,
                 child: ClipRRect(
-                  child: _getImageForWaste(waste.wasteType),
+                  child: _getImageForWaste(waste.containerWasteType),
                 ),
               ),
 

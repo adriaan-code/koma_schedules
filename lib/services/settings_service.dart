@@ -1,17 +1,19 @@
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../models/saved_location.dart';
 
 class SettingsService {
   factory SettingsService() => _instance;
   SettingsService._internal();
   static const String _notificationsEnabledKey = 'notifications_enabled';
-  static const String _locationAccessKey = 'location_access';
   static const String _selectedLanguageKey = 'selected_language';
   static const String _notificationHourKey = 'notification_hour';
   static const String _notificationMinuteKey = 'notification_minute';
+  static const String _savedLocationsKey = 'saved_locations';
 
   // Domyślne wartości
   static const bool _defaultNotificationsEnabled = true;
-  static const bool _defaultLocationAccess = false;
   static const String _defaultSelectedLanguage = 'Polski';
   static const int _defaultNotificationHour = 7;
   static const int _defaultNotificationMinute = 0;
@@ -21,7 +23,6 @@ class SettingsService {
 
   // Cache dla ustawień
   bool? _notificationsEnabled;
-  bool? _locationAccess;
   String? _selectedLanguage;
   int? _notificationHour;
   int? _notificationMinute;
@@ -35,15 +36,6 @@ class SettingsService {
           _defaultNotificationsEnabled;
     }
     return _notificationsEnabled!;
-  }
-
-  Future<bool> get locationAccess async {
-    if (_locationAccess == null) {
-      final prefs = await SharedPreferences.getInstance();
-      _locationAccess =
-          prefs.getBool(_locationAccessKey) ?? _defaultLocationAccess;
-    }
-    return _locationAccess!;
   }
 
   Future<String> get selectedLanguage async {
@@ -80,12 +72,6 @@ class SettingsService {
     _notificationsEnabled = value;
   }
 
-  Future<void> setLocationAccess(bool value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_locationAccessKey, value);
-    _locationAccess = value;
-  }
-
   Future<void> setSelectedLanguage(String value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_selectedLanguageKey, value);
@@ -103,7 +89,6 @@ class SettingsService {
   // Metoda do czyszczenia cache (np. po wylogowaniu)
   void clearCache() {
     _notificationsEnabled = null;
-    _locationAccess = null;
     _selectedLanguage = null;
     _notificationHour = null;
     _notificationMinute = null;
@@ -113,11 +98,72 @@ class SettingsService {
   Future<void> resetToDefaults() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_notificationsEnabledKey);
-    await prefs.remove(_locationAccessKey);
     await prefs.remove(_selectedLanguageKey);
     await prefs.remove(_notificationHourKey);
     await prefs.remove(_notificationMinuteKey);
+    await prefs.remove(_savedLocationsKey);
     clearCache();
+  }
+
+  // ==================== Zapisane lokalizacje ====================
+
+  /// Pobiera wszystkie zapisane lokalizacje
+  Future<List<SavedLocation>> getSavedLocations() async {
+    final prefs = await SharedPreferences.getInstance();
+    final locationsJson = prefs.getString(_savedLocationsKey);
+    
+    if (locationsJson == null || locationsJson.isEmpty) {
+      return [];
+    }
+
+    try {
+      final List<dynamic> decoded = jsonDecode(locationsJson) as List<dynamic>;
+      return decoded
+          .map((json) => SavedLocation.fromJson(json as Map<String, dynamic>))
+          .toList();
+    } catch (e) {
+      debugPrint('Błąd odczytu zapisanych lokalizacji: $e');
+      return [];
+    }
+  }
+
+  /// Zapisuje listę lokalizacji
+  Future<void> setSavedLocations(List<SavedLocation> locations) async {
+    final prefs = await SharedPreferences.getInstance();
+    final locationsJson = jsonEncode(
+      locations.map((loc) => loc.toJson()).toList(),
+    );
+    await prefs.setString(_savedLocationsKey, locationsJson);
+  }
+
+  /// Dodaje nową lokalizację
+  Future<void> addSavedLocation(SavedLocation location) async {
+    final locations = await getSavedLocations();
+    locations.add(location);
+    await setSavedLocations(locations);
+  }
+
+  /// Usuwa lokalizację po ID
+  Future<void> removeSavedLocation(String locationId) async {
+    final locations = await getSavedLocations();
+    locations.removeWhere((loc) => loc.id == locationId);
+    await setSavedLocations(locations);
+  }
+
+  /// Aktualizuje istniejącą lokalizację
+  Future<void> updateSavedLocation(SavedLocation location) async {
+    final locations = await getSavedLocations();
+    final index = locations.indexWhere((loc) => loc.id == location.id);
+    if (index != -1) {
+      locations[index] = location;
+      await setSavedLocations(locations);
+    }
+  }
+
+  /// Pobiera włączone lokalizacje (dla których powiadomienia są aktywne)
+  Future<List<SavedLocation>> getEnabledLocations() async {
+    final locations = await getSavedLocations();
+    return locations.where((loc) => loc.isEnabled).toList();
   }
 
   /// Pobiera kod języka (pl, en, uk)
